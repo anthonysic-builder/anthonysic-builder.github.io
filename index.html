@@ -54,7 +54,7 @@
         <div class="absolute inset-0 bg-black opacity-30"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">Private Paul F. Costa</h1>
-            <p class="text-xl md:text-2xl text-slate-300 font-light tracking-wide mb-8">U.S. Army • Service No. 32 863 607</p>
+            <p class="text-xl md:text-2xl text-slate-300 font-light tracking-wide mb-8">U.S. Army</p>
             
             <div class="inline-block bg-slate-800 bg-opacity-80 px-6 py-2 rounded-full border border-slate-600">
                 <p class="text-sm md:text-base text-yellow-500 uppercase tracking-widest font-semibold">World War II Service Record (1943–1945)</p>
@@ -168,42 +168,54 @@
             <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Awards & Decorations</h2>
             <p class="text-center text-slate-500 mb-12">Click on any award to view criteria and details.</p>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <div onclick="openModal('eame')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/EAME_Campaign_Medal_ribbon.svg/200px-EAME_Campaign_Medal_ribbon.svg.png"  alt="EAME" class="h-10 mb-4 shadow-sm">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/EAME_Campaign_Medal_ribbon.svg/200px-EAME_Campaign_Medal_ribbon.svg.png" alt="EAME" class="h-10 mb-4 shadow-sm">
                     <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">EAME Campaign Medal</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">With 1 Bronze Service Star</p>
                 </div>
 
                 <div onclick="openModal('occupation')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Army_of_Occupation_Medal_ribbon.svg/200px-Army_of_Occupation_Medal_ribbon.svg.png"  alt="Occupation" class="h-10 mb-4 shadow-sm">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Army_of_Occupation_Medal_ribbon.svg/200px-Army_of_Occupation_Medal_ribbon.svg.png" alt="Occupation" class="h-10 mb-4 shadow-sm">
                     <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">Army of Occupation</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">Germany Clasp</p>
                 </div>
 
                 <div onclick="openModal('goodconduct')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Army_Good_Conduct_Medal_ribbon.svg/200px-Army_Good_Conduct_Medal_ribbon.svg.png"  alt="Good Conduct" class="h-10 mb-4 shadow-sm">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Army_Good_Conduct_Medal_ribbon.svg/200px-Army_Good_Conduct_Medal_ribbon.svg.png" alt="Good Conduct" class="h-10 mb-4 shadow-sm">
                     <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">Good Conduct Medal</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">Exemplary Fidelity</p>
                 </div>
 
                 <div onclick="openModal('victory')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/World_War_II_Victory_Medal_ribbon.svg/200px-World_War_II_Victory_Medal_ribbon.svg.png"  alt="Victory" class="h-10 mb-4 shadow-sm">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/World_War_II_Victory_Medal_ribbon.svg/200px-World_War_II_Victory_Medal_ribbon.svg.png" alt="Victory" class="h-10 mb-4 shadow-sm">
                     <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">WWII Victory Medal</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">Active Service 1941-1946</p>
                 </div>
 
+                <div onclick="openModal('americancampaign')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/American_Campaign_Medal_ribbon.svg/200px-American_Campaign_Medal_ribbon.svg.png" alt="American Campaign" class="h-10 mb-4 shadow-sm">
+                    <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">American Campaign Medal</h3>
+                    <p class="text-xs text-slate-500 mt-2 text-center">Service within American Theater</p>
+                </div>
+
                 <div onclick="openModal('muc')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-red-500 transition hover:shadow-xl transform hover:-translate-y-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Army_Meritorious_Unit_Commendation_ribbon.svg/200px-Army_Meritorious_Unit_Commendation_ribbon.svg.png"  alt="MUC" class="h-10 mb-4 shadow-sm">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Army_Meritorious_Unit_Commendation_ribbon.svg/200px-Army_Meritorious_Unit_Commendation_ribbon.svg.png" alt="MUC" class="h-10 mb-4 shadow-sm">
                     <h3 class="font-bold text-slate-800 group-hover:text-red-600 transition">Meritorious Unit Comm.</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">257th Engineer Combat Bn</p>
                 </div>
 
                 <div onclick="openModal('driver')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/US_Army_Driver_and_Mechanic_Badge.jpg/320px-US_Army_Driver_and_Mechanic_Badge.jpg"  alt="Driver" class="h-10 w-auto mb-4 drop-shadow-md">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/US_Army_Driver_and_Mechanic_Badge.jpg/320px-US_Army_Driver_and_Mechanic_Badge.jpg" alt="Driver" class="h-10 w-auto mb-4 drop-shadow-md">
                     <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">Driver & Mechanic Badge</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">Driver-W Bar (Heavy Truck)</p>
+                </div>
+
+                 <div onclick="openModal('marksman')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/U.S._Army_Marksmanship_Qualification_Badge%2C_Marksman%2C_with_Rifle_bar.jpg/167px-U.S._Army_Marksmanship_Qualification_Badge%2C_Marksman%2C_with_Rifle_bar.jpg" alt="Marksman" class="h-10 w-auto mb-4 drop-shadow-md">
+                    <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">Marksman Badge</h3>
+                    <p class="text-xs text-slate-500 mt-2 text-center">With Rifle Clasp</p>
                 </div>
 
             </div>
@@ -273,7 +285,7 @@
         });
         map.fitBounds(polyline.getBounds(), {padding: [50, 50]});
 
-        // --- MODAL SCRIPT ---
+        // --- MODAL SCRIPT (UPDATED WITH NEW AWARDS) ---
         const awardData = {
             'eame': {
                 title: 'EAME Campaign Medal',
@@ -291,9 +303,17 @@
                 title: 'World War II Victory Medal',
                 body: '<p><strong>Criteria:</strong> Awarded to any member of the United States military who served on active duty, or as a reservist, between December 7, 1941, and December 31, 1946.</p>'
             },
+            'americancampaign': {
+                title: 'American Campaign Medal',
+                body: '<p><strong>Criteria:</strong> Awarded to service members who performed military duty within the American Theater of Operations between December 7, 1941, and March 2, 1946.</p>'
+            },
             'driver': {
                 title: 'Driver & Mechanic Badge',
                 body: '<p class="mb-2"><strong>Criteria:</strong> Awarded to drivers and mechanics who demonstrate a high degree of skill in the operation and maintenance of military vehicles.</p><p><strong>Pvt. Costa\'s Award:</strong> Confirmed by his MOS 031 (Truck Driver, Heavy). The "Driver-W" bar denotes qualification on wheeled vehicles.</p>'
+            },
+            'marksman': {
+                title: 'Marksman Badge',
+                body: '<p class="mb-2"><strong>Criteria:</strong> Awarded to soldiers who obtain a qualifying score in a prescribed weapon course.</p><p><strong>Pvt. Costa\'s Award:</strong> The "Rifle" clasp indicates qualification with the standard service rifle (likely the M1 Garand) during basic training.</p>'
             },
             'muc': {
                 title: 'Meritorious Unit Commendation',
@@ -319,7 +339,6 @@
             document.body.classList.remove('modal-active');
         }
 
-        // Close modal if clicking outside
         document.querySelector('.modal-overlay').addEventListener('click', closeModal);
     </script>
 </body>
