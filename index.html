@@ -15,15 +15,13 @@
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
-            background-color: #f8f5f2; /* Warm paper texture color */
+            background-color: #f8f5f2; 
             color: #333;
         }
         h1, h2, h3, h4 { font-family: 'Merriweather', serif; }
-        
-        /* Smooth scrolling */
         html { scroll-behavior: smooth; }
 
-        /* Timeline Connector Line */
+        /* Timeline Styles */
         .timeline-line {
             position: absolute; left: 50%; top: 0; bottom: 0; 
             width: 2px; background-color: #cbd5e1; transform: translateX(-50%);
@@ -33,24 +31,28 @@
             width: 20px; height: 20px; border-radius: 50%; background-color: #fff; 
             border: 5px solid #475569; z-index: 10;
         }
-        /* Mobile adjustment for timeline */
         @media (max-width: 768px) {
             .timeline-line { left: 24px; }
             .timeline-dot { left: 24px; }
         }
 
-        /* Map Styling */
-        #map {
-            width: 100%;
-            height: 500px;
-            z-index: 1;
+        #map { width: 100%; height: 500px; z-index: 1; }
+
+        /* Modal Styles */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: hidden !important;
         }
     </style>
 </head>
 <body>
 
     <header class="bg-slate-900 text-white pt-20 pb-16 border-b-8 border-yellow-600 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-30"></div> <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
             <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">Private Paul F. Costa</h1>
             <p class="text-xl md:text-2xl text-slate-300 font-light tracking-wide mb-8">U.S. Army • Service No. 32 863 607</p>
             
@@ -100,7 +102,6 @@
     <section class="py-24 bg-slate-50">
         <div class="container mx-auto px-4 max-w-5xl">
             <h2 class="text-3xl font-bold text-slate-900 mb-16 text-center">Service Timeline</h2>
-            
             <div class="relative">
                 <div class="timeline-line"></div>
 
@@ -122,7 +123,7 @@
                         <span class="text-sm font-bold text-indigo-600 uppercase tracking-wider">Overseas: Phase I</span>
                     </div>
                     <div class="md:col-start-1 md:text-right md:row-start-1 bg-white p-8 rounded-xl shadow-md border-r-4 border-indigo-500 hover:shadow-lg transition">
-                        <p class="text-slate-700 leading-relaxed"><strong>Watton, England (AAF Station 505).</strong> Attached to the 52nd Station Complement Sq. Responsible for heavy transport convoys supporting 8th Air Force operations.</p>
+                        <p class="text-slate-700 leading-relaxed"><strong>Watton, England.</strong> Attached to the 52nd Station Complement Sq. Responsible for heavy transport convoys supporting 8th Air Force operations.</p>
                     </div>
                 </div>
 
@@ -144,7 +145,7 @@
                         <span class="text-sm font-bold text-green-600 uppercase tracking-wider">Occupation Duty</span>
                     </div>
                     <div class="md:col-start-1 md:text-right md:row-start-1 bg-white p-8 rounded-xl shadow-md border-r-4 border-green-500 hover:shadow-lg transition">
-                        <p class="text-slate-700 leading-relaxed"><strong>Sulzbach & Marburg, Germany.</strong> Served with the 257th ECB assisting in infrastructure repair and logistics in the American Occupation Zone.</p>
+                        <p class="text-slate-700 leading-relaxed"><strong>Sulzbach & Marburg, Germany.</strong> Served with the 257th ECB assisting in infrastructure repair, bridge building, and logistics in the American Occupation Zone.</p>
                     </div>
                 </div>
                 
@@ -158,50 +159,50 @@
                         <p class="text-slate-700 leading-relaxed"><strong>Fort Belvoir, Virginia.</strong> Honorably Discharged from the Army of the United States.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <section class="py-20 bg-white border-t border-slate-200">
         <div class="container mx-auto px-4 max-w-6xl">
-            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Awards & Decorations</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-4 text-center">Awards & Decorations</h2>
+            <p class="text-center text-slate-500 mb-12">Click on any award to view criteria and details.</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <div class="flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-lg">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/EAME_Campaign_Medal_ribbon.svg/200px-EAME_Campaign_Medal_ribbon.svg.png" alt="EAME" class="h-10 mb-4 shadow-sm">
-                    <h3 class="font-bold text-slate-800">EAME Campaign Medal</h3>
+                <div onclick="openModal('eame')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/EAME_Campaign_Medal_ribbon.svg/200px-EAME_Campaign_Medal_ribbon.svg.png"  alt="EAME" class="h-10 mb-4 shadow-sm">
+                    <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">EAME Campaign Medal</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">With 1 Bronze Service Star</p>
                 </div>
 
-                <div class="flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-lg">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Army_of_Occupation_Medal_ribbon.svg/200px-Army_of_Occupation_Medal_ribbon.svg.png" alt="Occupation" class="h-10 mb-4 shadow-sm">
-                    <h3 class="font-bold text-slate-800">Army of Occupation</h3>
+                <div onclick="openModal('occupation')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Army_of_Occupation_Medal_ribbon.svg/200px-Army_of_Occupation_Medal_ribbon.svg.png"  alt="Occupation" class="h-10 mb-4 shadow-sm">
+                    <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">Army of Occupation</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">Germany Clasp</p>
                 </div>
 
-                <div class="flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-lg">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Army_Good_Conduct_Medal_ribbon.svg/200px-Army_Good_Conduct_Medal_ribbon.svg.png" alt="Good Conduct" class="h-10 mb-4 shadow-sm">
-                    <h3 class="font-bold text-slate-800">Good Conduct Medal</h3>
+                <div onclick="openModal('goodconduct')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Army_Good_Conduct_Medal_ribbon.svg/200px-Army_Good_Conduct_Medal_ribbon.svg.png"  alt="Good Conduct" class="h-10 mb-4 shadow-sm">
+                    <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">Good Conduct Medal</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">Exemplary Fidelity</p>
                 </div>
 
-                <div class="flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-lg">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/World_War_II_Victory_Medal_ribbon.svg/200px-World_War_II_Victory_Medal_ribbon.svg.png" alt="Victory" class="h-10 mb-4 shadow-sm">
-                    <h3 class="font-bold text-slate-800">WWII Victory Medal</h3>
+                <div onclick="openModal('victory')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/World_War_II_Victory_Medal_ribbon.svg/200px-World_War_II_Victory_Medal_ribbon.svg.png"  alt="Victory" class="h-10 mb-4 shadow-sm">
+                    <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">WWII Victory Medal</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">Active Service 1941-1946</p>
                 </div>
 
-                <div class="flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-lg">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Army_Meritorious_Unit_Commendation_ribbon.svg/200px-Army_Meritorious_Unit_Commendation_ribbon.svg.png" alt="MUC" class="h-10 mb-4 shadow-sm">
-                    <h3 class="font-bold text-slate-800">Meritorious Unit Comm.</h3>
+                <div onclick="openModal('muc')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-red-500 transition hover:shadow-xl transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Army_Meritorious_Unit_Commendation_ribbon.svg/200px-Army_Meritorious_Unit_Commendation_ribbon.svg.png"  alt="MUC" class="h-10 mb-4 shadow-sm">
+                    <h3 class="font-bold text-slate-800 group-hover:text-red-600 transition">Meritorious Unit Comm.</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">257th Engineer Combat Bn</p>
                 </div>
 
-                <div class="flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-lg">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/US_Army_Driver_and_Mechanic_Badge.jpg" alt="Driver" class="h-10 w-auto mb-4 drop-shadow-md">
-                    <h3 class="font-bold text-slate-800">Driver & Mechanic Badge</h3>
+                <div onclick="openModal('driver')" class="cursor-pointer group flex flex-col items-center bg-slate-50 p-6 rounded-xl border border-slate-100 hover:border-yellow-400 transition hover:shadow-xl transform hover:-translate-y-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/US_Army_Driver_and_Mechanic_Badge.jpg/320px-US_Army_Driver_and_Mechanic_Badge.jpg"  alt="Driver" class="h-10 w-auto mb-4 drop-shadow-md">
+                    <h3 class="font-bold text-slate-800 group-hover:text-yellow-700 transition">Driver & Mechanic Badge</h3>
                     <p class="text-xs text-slate-500 mt-2 text-center">Driver-W Bar (Heavy Truck)</p>
                 </div>
 
@@ -214,22 +215,44 @@
         <p class="text-xs opacity-50">&copy; 2023 - A tribute to the service of Paul F. Costa</p>
     </footer>
 
+    <div id="modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[2000]">
+        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+        
+        <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+            <div class="modal-content py-4 text-left px-6">
+                <div class="flex justify-between items-center pb-3">
+                    <p class="text-2xl font-bold text-slate-900" id="modal-title">Award Title</p>
+                    <div class="modal-close cursor-pointer z-50" onclick="closeModal()">
+                        <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div id="modal-body" class="text-slate-700 text-sm leading-relaxed">
+                    </div>
+
+                <div class="flex justify-end pt-4">
+                    <button onclick="closeModal()" class="px-4 py-2 bg-slate-800 p-3 rounded-lg text-white hover:bg-slate-700">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script>
-        // Init Map
+        // --- MAP SCRIPT ---
         var map = L.map('map', {
-            scrollWheelZoom: false, // Keep user from getting stuck
+            scrollWheelZoom: false,
             zoomControl: true
         }).setView([48.0, -10.0], 3);
 
-        // Add beautiful map tiles (CartoDB Voyager - very clean)
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 19
         }).addTo(map);
 
-        // Define Points
         var locations = [
             { name: "Camp Lee, VA", coords: [37.23, -77.33] },
             { name: "Watton, England", coords: [52.57, 0.82] },
@@ -238,29 +261,66 @@
             { name: "Fort Belvoir, VA", coords: [38.71, -77.14] }
         ];
 
-        // Draw Line
         var latlngs = locations.map(loc => loc.coords);
         var polyline = L.polyline(latlngs, {
-            color: '#d97706', // Amber/Yellow
-            weight: 4,
-            opacity: 0.8,
-            dashArray: '10, 10',
-            lineCap: 'round'
+            color: '#d97706', weight: 4, opacity: 0.8, dashArray: '10, 10', lineCap: 'round'
         }).addTo(map);
 
-        // Custom Markers
         locations.forEach(function(loc) {
             L.circleMarker(loc.coords, {
-                color: '#fff',
-                fillColor: '#d97706',
-                fillOpacity: 1,
-                radius: 6,
-                weight: 2
+                color: '#fff', fillColor: '#d97706', fillOpacity: 1, radius: 6, weight: 2
             }).addTo(map).bindPopup("<b>" + loc.name + "</b>");
         });
-
-        // Fit Bounds
         map.fitBounds(polyline.getBounds(), {padding: [50, 50]});
+
+        // --- MODAL SCRIPT ---
+        const awardData = {
+            'eame': {
+                title: 'EAME Campaign Medal',
+                body: '<p class="mb-2"><strong>Criteria:</strong> Awarded to service members who performed military duty in the European Theater (to include North Africa and the Middle East) between Dec 7, 1941, and Mar 2, 1946.</p><p><strong>Pvt. Costa\'s Award:</strong> Includes 1 Bronze Service Star, signifying participation in the "Central Europe" campaign (Mar 22 – May 11, 1945).</p>'
+            },
+            'occupation': {
+                title: 'Army of Occupation Medal',
+                body: '<p class="mb-2"><strong>Criteria:</strong> Awarded for service for 30 consecutive days in the occupation of Germany (May 9, 1945 – May 5, 1955).</p><p><strong>Pvt. Costa\'s Award:</strong> Includes the "Germany" clasp for his service in the American Occupation Zone (Sulzbach/Marburg) with the 257th Engineers immediately following V-E Day.</p>'
+            },
+            'goodconduct': {
+                title: 'Good Conduct Medal',
+                body: '<p><strong>Criteria:</strong> Awarded to any active-duty enlisted member of the United States military who completes three consecutive years of "honorable and faithful service" or one year of service during a time of war.</p>'
+            },
+            'victory': {
+                title: 'World War II Victory Medal',
+                body: '<p><strong>Criteria:</strong> Awarded to any member of the United States military who served on active duty, or as a reservist, between December 7, 1941, and December 31, 1946.</p>'
+            },
+            'driver': {
+                title: 'Driver & Mechanic Badge',
+                body: '<p class="mb-2"><strong>Criteria:</strong> Awarded to drivers and mechanics who demonstrate a high degree of skill in the operation and maintenance of military vehicles.</p><p><strong>Pvt. Costa\'s Award:</strong> Confirmed by his MOS 031 (Truck Driver, Heavy). The "Driver-W" bar denotes qualification on wheeled vehicles.</p>'
+            },
+            'muc': {
+                title: 'Meritorious Unit Commendation',
+                body: '<div class="border-l-4 border-red-500 pl-4 italic text-slate-600 mb-4">"For exceptionally meritorious conduct in the performance of outstanding services..."</div><p><strong>Historical Context (H&S Co, 257th ECB):</strong><br>During the final Allied push into Germany (March–May 1945), the Headquarters & Service Company, 257th Engineer Combat Battalion, distinguished itself by providing critical support to the 6th Armored Division. Operating under constant pressure, the unit maintained vital supply routes and constructed/repaired key tactical bridges (including an 84-ft steel stringer bridge) essential for the rapid movement of heavy armor across the Rhine and into the German heartland.</p>'
+            }
+        };
+
+        function openModal(awardKey) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modal-title');
+            const body = document.getElementById('modal-body');
+            
+            title.innerHTML = awardData[awardKey].title;
+            body.innerHTML = awardData[awardKey].body;
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('modal-active');
+        }
+
+        // Close modal if clicking outside
+        document.querySelector('.modal-overlay').addEventListener('click', closeModal);
     </script>
 </body>
 </html>
