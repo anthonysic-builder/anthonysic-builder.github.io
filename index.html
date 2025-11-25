@@ -27,6 +27,7 @@
                         'navy-dark': '#1e293b',
                         'brass': '#b38b4d',
                         'ink': '#2c2c2c',
+                        'archive-note-bg': '#fcfbf7', // Very light cream for note box
                     },
                     fontFamily: {
                         'serif': ['Merriweather', 'serif'],
@@ -59,8 +60,6 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* --- MAP ENHANCEMENTS --- */
-        
-        /* 1. Vintage Filter */
         .vintage-map .leaflet-layer {
             filter: grayscale(100%) sepia(30%) contrast(90%);
             transition: filter 0.5s ease;
@@ -69,13 +68,12 @@
             filter: grayscale(0%) sepia(0%);
         }
 
-        /* 2. Numbered Markers */
         .number-icon {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #1e293b; /* Navy Dark */
-            color: #b38b4d; /* Brass */
+            background-color: #1e293b; 
+            color: #b38b4d;
             border: 2px solid #b38b4d;
             border-radius: 50%;
             font-family: 'Courier Prime', monospace;
@@ -84,15 +82,10 @@
             box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
         }
 
-        /* 3. Flowing Line Animation */
-        @keyframes dash-flow {
-            to { stroke-dashoffset: -20; }
-        }
-        .path-flow {
-            animation: dash-flow 1s linear infinite;
-        }
+        @keyframes dash-flow { to { stroke-dashoffset: -20; } }
+        .path-flow { animation: dash-flow 1s linear infinite; }
         
-        /* Custom Popup Styles to match site theme */
+        /* Map Popup Styling */
         .leaflet-popup-content-wrapper {
             background: #f4f1ea;
             border-radius: 2px;
@@ -347,23 +340,28 @@
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal (Enhanced with New Note Style) -->
     <div id="modal" class="modal opacity-0 pointer-events-none fixed inset-0 z-[2000] flex items-center justify-center p-4">
         <div class="modal-overlay absolute inset-0 bg-navy-dark opacity-80 backdrop-blur-sm" onclick="closeModal()"></div>
         <div class="bg-paper w-full max-w-lg mx-auto rounded-sm shadow-2xl z-50 transform scale-95 transition-transform duration-200" id="modal-panel">
             <div class="border-b-2 border-brass bg-paper-dark px-6 py-4 flex justify-between items-center">
                 <h3 class="text-xl font-serif font-bold text-ink" id="modal-title">Title</h3>
                 <button onclick="closeModal()" class="text-gray-500 hover:text-red-700 transition">
+                    <!-- Standard X close icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
+            
             <div class="p-8">
-                <div class="prose prose-sm prose-p:text-gray-700 font-sans" id="modal-body"></div>
+                <!-- Main Body text container -->
+                <div class="font-sans text-gray-700 leading-relaxed text-sm" id="modal-body"></div>
             </div>
+
             <div class="bg-paper-dark px-6 py-4 flex justify-end">
-                 <button onclick="closeModal()" class="px-5 py-2 bg-navy-dark text-white text-xs font-bold uppercase tracking-wider hover:bg-black transition rounded-sm">Close Record</button>
+                 <!-- Close Record button styled per reference -->
+                 <button onclick="closeModal()" class="px-6 py-3 bg-navy-dark text-white text-xs font-bold uppercase tracking-wider hover:bg-black transition rounded-sm shadow-lg">Close Record</button>
             </div>
         </div>
     </div>
@@ -379,14 +377,12 @@
                 }
             });
         }, { threshold: 0.1 });
-        
         revealElements.forEach(el => revealObserver.observe(el));
 
         var map = L.map('map', {
             scrollWheelZoom: false,
             zoomControl: false 
-        }).setView([46.0, -25.0], 3); // Wide view to see USA and EU
-        
+        }).setView([46.0, -25.0], 3); 
         L.control.zoom({ position: 'topright' }).addTo(map);
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -394,7 +390,6 @@
             maxZoom: 19
         }).addTo(map);
 
-        // DATA: Now includes DATE and UNIT
         var locations = [
             { id: 1, name: "Camp Lee, VA", date: "Mar 22, 1943", unit: "QM School (Basic)", coords: [37.23, -77.33] },
             { id: 2, name: "Watton, England", date: "Jan 1944", unit: "52nd Station Compl. Sq", coords: [52.57, 0.82] },
@@ -404,53 +399,58 @@
         ];
 
         var latlngs = locations.map(loc => loc.coords);
-        
-        // POLYLINE: Animated Dashed Line
         var polyline = L.polyline(latlngs, {
-            color: '#b38b4d', 
-            weight: 3, 
-            opacity: 1, 
-            dashArray: '10, 10', 
-            lineCap: 'round',
-            className: 'path-flow' // CSS Class for Animation
+            color: '#b38b4d', weight: 3, opacity: 1, dashArray: '10, 10', lineCap: 'round', className: 'path-flow'
         }).addTo(map);
 
-        // MARKERS: Numbered Div Icons with Data Popups
         locations.forEach(function(loc) {
-            // Create Numbered Icon
             var numberIcon = L.divIcon({
-                className: 'bg-transparent', // Handled by inner html styling or main class? Leaflet is picky
+                className: 'bg-transparent',
                 html: `<div class="number-icon w-8 h-8 rounded-full bg-navy-dark text-white border-2 border-brass flex items-center justify-center font-bold font-mono shadow-md z-50">${loc.id}</div>`,
-                iconSize: [32, 32],
-                iconAnchor: [16, 16],
-                popupAnchor: [0, -16]
+                iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -16]
             });
-
-            // Create Popup Content
-            var popupContent = `
-                <div class="text-center font-sans p-2">
-                    <div class="font-bold text-ink uppercase tracking-wide text-xs mb-1">${loc.name}</div>
-                    <div class="text-brass font-bold font-mono text-[10px] mb-2">${loc.date}</div>
-                    <div class="bg-gray-100 text-gray-600 text-[10px] p-1 rounded border border-gray-300">
-                        Unit: ${loc.unit}
-                    </div>
-                </div>
-            `;
-
+            var popupContent = `<div class="text-center font-sans p-2"><div class="font-bold text-ink uppercase tracking-wide text-xs mb-1">${loc.name}</div><div class="text-brass font-bold font-mono text-[10px] mb-2">${loc.date}</div><div class="bg-gray-100 text-gray-600 text-[10px] p-1 rounded border border-gray-300">Unit: ${loc.unit}</div></div>`;
             L.marker(loc.coords, { icon: numberIcon }).addTo(map).bindPopup(popupContent);
         });
 
         map.fitBounds(polyline.getBounds(), {padding: [50, 50]});
 
+        // Award Data with Standardized Archive Note Box
+        const noteBox = (label, text) => `<div class="bg-archive-note-bg p-5 border-l-4 border-brass mt-6 shadow-sm"><p class="font-bold text-brass text-xs uppercase tracking-wider mb-2">${label}</p><p class="text-sm text-gray-700 leading-relaxed font-sans">${text}</p></div>`;
+
         const awardData = {
-            'eame': { title: 'EAME Campaign Medal', body: '<p class="mb-4"><strong>Criteria:</strong> Awarded to service members who performed military duty in the European Theater (to include North Africa and the Middle East) between Dec 7, 1941, and Mar 2, 1946.</p><div class="bg-yellow-50 p-4 border-l-4 border-yellow-500 text-xs text-yellow-800"><p><strong>Archive Note:</strong> Pvt. Costa\'s record indicates 1 Bronze Service Star. This signifies active participation in the designated "Central Europe" campaign (Mar 22 – May 11, 1945).</p></div>' },
-            'occupation': { title: 'Army of Occupation Medal', body: '<p class="mb-4"><strong>Criteria:</strong> Awarded for service for 30 consecutive days in the occupation of Germany (May 9, 1945 – May 5, 1955).</p><p class="text-sm text-gray-600">Issued with the "Germany" Clasp. Pvt. Costa served in the American Occupation Zone (Sulzbach/Marburg area) assisting the 257th Engineers with civil works projects immediately following V-E Day.</p>' },
-            'goodconduct': { title: 'Good Conduct Medal', body: '<p class="mb-2"><strong>Criteria:</strong> Awarded to any active-duty enlisted member of the United States military who completes three consecutive years of "honorable and faithful service" or one year of service during a time of war.</p>' },
-            'victory': { title: 'World War II Victory Medal', body: '<p><strong>Criteria:</strong> Awarded to any member of the United States military who served on active duty, or as a reservist, between December 7, 1941, and December 31, 1946.</p>' },
-            'americancampaign': { title: 'American Campaign Medal', body: '<p><strong>Criteria:</strong> Awarded to service members who performed military duty within the American Theater of Operations between December 7, 1941, and March 2, 1946.</p>' },
-            'driver': { title: 'Driver & Mechanic Badge', body: '<p class="mb-2"><strong>Criteria:</strong> Awarded to drivers and mechanics who demonstrate a high degree of skill in the operation and maintenance of military vehicles.</p><p class="font-mono text-xs bg-gray-100 p-2">MOS Qualification: 031 (Heavy Truck). The "Driver-W" bar denotes specific qualification on wheeled vehicles.</p>' },
-            'marksman': { title: 'Marksman Badge', body: '<p class="mb-2"><strong>Criteria:</strong> Awarded to soldiers who obtain a qualifying score in a prescribed weapon course.</p><p class="text-sm">Qualification: Service Rifle (M1 Garand). Earned during basic training.</p>' },
-            'muc': { title: 'Meritorious Unit Commendation', body: '<div class="italic text-red-800 bg-red-50 p-3 mb-4 text-sm font-serif">"For exceptionally meritorious conduct in the performance of outstanding services..."</div><p><strong>Historical Context:</strong><br>The H&S Company, 257th Engineer Combat Battalion distinguished itself during the Rhineland campaign by constructing and repairing tactical bridges under combat conditions to support the advance of the 6th Armored Division.</p>' }
+            'eame': { 
+                title: 'EAME Campaign Medal', 
+                body: `<p><strong>Criteria:</strong> Awarded to service members who performed military duty in the European Theater (to include North Africa and the Middle East) between Dec 7, 1941, and Mar 2, 1946.</p>${noteBox('Archive Note:', 'Pvt. Costa\'s record indicates 1 Bronze Service Star. This signifies active participation in the designated "Central Europe" campaign (Mar 22 – May 11, 1945).')}` 
+            },
+            'occupation': { 
+                title: 'Army of Occupation Medal', 
+                body: `<p><strong>Criteria:</strong> Awarded for service for 30 consecutive days in the occupation of Germany (May 9, 1945 – May 5, 1955).</p>${noteBox('Service Record:', 'Issued with the "Germany" Clasp. Pvt. Costa served in the American Occupation Zone (Sulzbach/Marburg area) assisting the 257th Engineers with civil works projects immediately following V-E Day.')}` 
+            },
+            'goodconduct': { 
+                title: 'Good Conduct Medal', 
+                body: `<p><strong>Criteria:</strong> Awarded to any active-duty enlisted member of the United States military who completes three consecutive years of "honorable and faithful service" or one year of service during a time of war.</p>${noteBox('Archive Note:', 'Awarded for efficiency, honor, and fidelity throughout 32 months of continuous active service.')}` 
+            },
+            'victory': { 
+                title: 'World War II Victory Medal', 
+                body: `<p><strong>Criteria:</strong> Awarded to any member of the United States military who served on active duty, or as a reservist, between December 7, 1941, and December 31, 1946.</p>${noteBox('Archive Note:', 'Recognizes contribution to the successful conclusion of the war and active duty service within the combat period.')}` 
+            },
+            'americancampaign': { 
+                title: 'American Campaign Medal', 
+                body: `<p><strong>Criteria:</strong> Awarded to service members who performed military duty within the American Theater of Operations between December 7, 1941, and March 2, 1946.</p>${noteBox('Service Record:', 'Acknowledges service within the continental United States (CONUS), specifically training at Camp Lee and logistical preparation.')}` 
+            },
+            'driver': { 
+                title: 'Driver & Mechanic Badge', 
+                body: `<p><strong>Criteria:</strong> Awarded to drivers and mechanics who demonstrate a high degree of skill in the operation and maintenance of military vehicles.</p>${noteBox('Qualification Record:', 'MOS 031 (Heavy Truck). The "Driver-W" bar denotes specific qualification and expert operation of wheeled military vehicles.')}` 
+            },
+            'marksman': { 
+                title: 'Marksman Badge', 
+                body: `<p><strong>Criteria:</strong> Awarded to soldiers who obtain a qualifying score in a prescribed weapon course.</p>${noteBox('Qualification Record:', 'Qualified with the Service Rifle (M1 Garand). Earned during Basic Training cycle at Camp Lee, VA.')}` 
+            },
+            'muc': { 
+                title: 'Meritorious Unit Commendation', 
+                body: `<div class="italic text-gray-500 mb-2 font-serif text-sm">"For exceptionally meritorious conduct in the performance of outstanding services..."</div>${noteBox('Unit History:', 'The H&S Company, 257th Engineer Combat Battalion distinguished itself during the Rhineland campaign by constructing and repairing tactical bridges under combat conditions to support the advance of the 6th Armored Division.')}` 
+            }
         };
 
         function openModal(awardKey) {
