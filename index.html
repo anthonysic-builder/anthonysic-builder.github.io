@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Custom Tailwind Configuration for "Archival" Colors -->
+    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -81,12 +81,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Typewriter text effect */
-        .typewriter-text {
-            font-family: 'Courier Prime', monospace;
-            letter-spacing: -0.5px;
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -94,7 +88,8 @@
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-navy-dark text-paper z-50 shadow-md bg-opacity-95 backdrop-blur-sm border-b-2 border-brass">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <span class="font-mono text-sm tracking-widest uppercase text-brass font-bold">SN: 33549662</span>
+            <!-- Reference to SN Removed per request -->
+            <span class="font-mono text-sm tracking-widest uppercase text-brass font-bold">Official File</span>
             <div class="space-x-6 text-sm font-semibold tracking-wide">
                 <a href="#overview" class="hover:text-brass transition">Overview</a>
                 <a href="#timeline" class="hover:text-brass transition">Timeline</a>
@@ -105,7 +100,7 @@
 
     <!-- Header -->
     <header class="bg-navy-dark text-paper pt-32 pb-20 relative overflow-hidden border-b-8 border-brass">
-        <!-- Noise Texture Overlay (Optional styling) -->
+        <!-- Noise Texture Overlay -->
         <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
         
         <div class="container mx-auto px-4 text-center relative z-10 reveal active">
@@ -119,16 +114,17 @@
 
             <div class="flex flex-wrap justify-center items-end gap-16 mt-16">
                 <div class="group text-center">
-                    <div class="relative w-24 h-24 mx-auto mb-4">
+                    <div class="relative w-28 h-28 mx-auto mb-4 flex items-center justify-center">
                         <div class="absolute inset-0 bg-white opacity-10 rounded-full blur-xl group-hover:opacity-20 transition"></div>
-                        <img src="images/8th-af.png" alt="8th Air Force" class="relative z-10 h-full w-auto mx-auto filter brightness-90 contrast-125 group-hover:brightness-110 group-hover:scale-105 transition duration-500">
+                        <img src="images/8th-af.png" alt="8th Air Force" class="relative z-10 max-h-full w-auto object-contain mx-auto filter brightness-90 contrast-125 group-hover:brightness-110 group-hover:scale-105 transition duration-500">
                     </div>
                     <p class="text-xs text-brass font-mono uppercase tracking-wider">8th Air Force</p>
                 </div>
                 <div class="group text-center">
-                    <div class="relative w-24 h-24 mx-auto mb-4">
+                    <!-- Adjusted h/w and added object-contain to fix 'squishing' -->
+                    <div class="relative w-28 h-28 mx-auto mb-4 flex items-center justify-center">
                         <div class="absolute inset-0 bg-white opacity-10 rounded-full blur-xl group-hover:opacity-20 transition"></div>
-                        <img src="images/7th-army.png" alt="7th Army" class="relative z-10 h-full w-auto mx-auto filter brightness-90 contrast-125 group-hover:brightness-110 group-hover:scale-105 transition duration-500">
+                        <img src="images/7th-army.png" alt="7th Army" class="relative z-10 max-h-full w-auto object-contain mx-auto filter brightness-90 contrast-125 group-hover:brightness-110 group-hover:scale-105 transition duration-500">
                     </div>
                     <p class="text-xs text-brass font-mono uppercase tracking-wider">7th Army</p>
                 </div>
@@ -182,18 +178,15 @@
                 <!-- Vertical Line -->
                 <div class="timeline-line absolute left-8 md:left-1/2 top-0 bottom-0 transform md:-translate-x-1/2 bg-gray-300"></div>
 
-                <!-- Timeline Item 1 -->
+                <!-- 1. Induction (Right) -->
                 <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
-                    <!-- Dot -->
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-navy-dark rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     
-                    <!-- Date (Left on Desktop) -->
                     <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
-                        <h3 class="text-2xl font-bold text-ink font-mono">1943</h3>
+                        <h3 class="text-2xl font-bold text-ink font-mono">March 1943</h3>
                         <div class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Induction</div>
                     </div>
                     
-                    <!-- Content (Right on Desktop) -->
                     <div class="pl-20 md:pl-0">
                         <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-blue-400 transition-colors duration-300">
                             <h4 class="font-bold text-lg mb-2 text-ink">Camp Lee, Virginia</h4>
@@ -202,11 +195,10 @@
                     </div>
                 </div>
 
-                <!-- Timeline Item 2 -->
+                <!-- 2. England (Left) -->
                 <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-brass rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     
-                    <!-- Content (Left on Desktop) -->
                     <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
                          <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-brass transition-colors duration-300">
                             <h4 class="font-bold text-lg mb-2 text-ink">Watton, England</h4>
@@ -214,61 +206,79 @@
                         </div>
                     </div>
 
-                    <!-- Date (Right on Desktop) -->
                     <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
                          <h3 class="text-2xl font-bold text-ink font-mono">1944–45</h3>
                          <div class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">ETO Logistics</div>
                     </div>
                 </div>
 
-                <!-- Timeline Item 3 -->
+                <!-- 3. Thaon-les-Vosges, France (Right - ADDED BACK) -->
                 <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
-                    <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-red-700 rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
+                    <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-orange-500 rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     
                     <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
-                        <h3 class="text-2xl font-bold text-ink font-mono">May 02, 1945</h3>
-                        <div class="inline-block bg-red-100 text-red-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Transfer</div>
+                        <h3 class="text-2xl font-bold text-ink font-mono">Spring 1945</h3>
+                        <div class="inline-block bg-orange-100 text-orange-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Staging</div>
                     </div>
                     
                     <div class="pl-20 md:pl-0">
-                        <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-red-400 transition-colors duration-300">
-                            <h4 class="font-bold text-lg mb-2 text-ink">Forward Deployment</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Transferred to Army Ground Forces in Germany. Joined the <strong>257th Engineer Combat Battalion</strong> just 6 days before V-E Day to assist the rapid advance.</p>
+                        <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-orange-400 transition-colors duration-300">
+                            <h4 class="font-bold text-lg mb-2 text-ink">Thaon-les-Vosges, France</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Tactical movement across the continent. Bivouacked at Thaon-les-Vosges as Allied forces consolidated for the final push into Germany.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Timeline Item 4 -->
+                <!-- 4. Transfer / Germany (Left - SHIFTED FOR ALTERNATING PATTERN) -->
+                <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
+                    <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-red-700 rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
+                    
+                    <!-- Content (Left) -->
+                    <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
+                        <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-red-400 transition-colors duration-300">
+                            <h4 class="font-bold text-lg mb-2 text-ink">Combat Unit Transfer</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Transferred to Army Ground Forces in Germany. Joined the <strong>257th Engineer Combat Battalion</strong> just 6 days before V-E Day to assist the rapid advance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Date (Right) -->
+                    <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
+                        <h3 class="text-2xl font-bold text-ink font-mono">May 2, 1945</h3>
+                        <div class="inline-block bg-red-100 text-red-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Transfer</div>
+                    </div>
+                </div>
+
+                <!-- 5. Occupation (Right - SHIFTED) -->
                 <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-od-green rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     
-                     <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
-                         <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-od-green transition-colors duration-300">
+                    <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
+                         <h3 class="text-2xl font-bold text-ink font-mono">Summer 1945</h3>
+                         <div class="inline-block bg-green-100 text-green-900 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Occupation</div>
+                    </div>
+                    
+                     <div class="pl-20 md:pl-0">
+                         <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-od-green transition-colors duration-300">
                             <h4 class="font-bold text-lg mb-2 text-ink">Occupied Germany</h4>
                             <p class="text-gray-600 text-sm leading-relaxed"><strong>Sulzbach & Marburg.</strong> Served with the 257th ECB assisting in infrastructure repair, bridge building, and establishing the American Occupation Zone.</p>
                         </div>
                     </div>
-
-                    <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
-                         <h3 class="text-2xl font-bold text-ink font-mono">Summer 1945</h3>
-                         <div class="inline-block bg-green-100 text-green-900 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Occupation</div>
-                    </div>
                 </div>
                 
-                 <!-- Timeline Item 5 -->
+                 <!-- 6. Discharge (Left - SHIFTED) -->
                  <div class="relative mb-4 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-gray-800 rounded-full transform -translate-x-1/2 z-10"></div>
                     
-                    <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
-                        <h3 class="text-2xl font-bold text-ink font-mono">Nov 16, 1945</h3>
-                        <div class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Honorable Discharge</div>
-                    </div>
-                    
-                    <div class="pl-20 md:pl-0">
-                        <div class="bg-transparent border-l-4 border-gray-400 pl-6">
+                     <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
+                         <div class="bg-transparent border-r-4 border-gray-400 pr-6">
                             <h4 class="font-bold text-lg mb-1 text-ink">Fort Belvoir, Virginia</h4>
                             <p class="text-gray-600 text-sm italic">Service concludes. Returns to civilian life.</p>
                         </div>
+                    </div>
+
+                    <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
+                        <h3 class="text-2xl font-bold text-ink font-mono">Nov 16, 1945</h3>
+                        <div class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Honorable Discharge</div>
                     </div>
                 </div>
 
@@ -285,9 +295,10 @@
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
-                <!-- Helper: Award Card Mixin -->
+                <!-- Helper Script for cards -->
                 <script>
-                    const renderCard = (id, img, title, subtitle, borderHover) => {
+                    // UPDATED Helper: added 'imgClass' parameter to allow sizing badges larger
+                    const renderCard = (id, img, title, subtitle, borderHover, imgClass = 'max-h-12') => {
                         document.write(`
                             <div onclick="openModal('${id}')" class="bg-white p-6 rounded-sm shadow-md cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden border-b-4 border-transparent hover:${borderHover}">
                                 <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition text-gray-400">
@@ -295,11 +306,13 @@
                                 </div>
                                 <div class="flex flex-col items-center h-full justify-between">
                                     <div class="flex-grow flex items-center justify-center w-full mb-4">
-                                        <img src="${img}" alt="${title}" class="max-h-12 w-auto drop-shadow-sm filter contrast-110">
+                                        <!-- Used new imgClass parameter here -->
+                                        <img src="${img}" alt="${title}" class="${imgClass} w-auto drop-shadow-sm filter contrast-110">
                                     </div>
                                     <div class="text-center">
                                         <h3 class="font-bold text-ink text-sm leading-tight mb-1 font-serif group-hover:text-brass transition-colors">${title}</h3>
-                                        <p class="text-[10px] uppercase tracking-wider text-gray-500 font-bold">${subtitle}</p>
+                                        <!-- Enforced font-mono for the subtitle line -->
+                                        <p class="text-[10px] uppercase tracking-wider text-gray-500 font-bold font-mono">${subtitle}</p>
                                     </div>
                                 </div>
                             </div>
@@ -307,16 +320,19 @@
                     };
                 </script>
 
-                <!-- Cards Rendered via JS to clean up HTML for readability, normally done in React/etc -->
+                <!-- Cards Rendered via JS -->
                 <script>
+                    // Standard ribbons stay max-h-12
                     renderCard('eame', 'images/eame.png', 'EAME Campaign', '1 Bronze Star', 'border-yellow-600');
                     renderCard('occupation', 'images/occupation.png', 'Army of Occupation', 'Germany Clasp', 'border-black');
                     renderCard('goodconduct', 'images/good-conduct.png', 'Good Conduct', 'Efficiency & Fidelity', 'border-red-800');
                     renderCard('victory', 'images/victory.png', 'WWII Victory', 'Active Service', 'border-red-600');
                     renderCard('americancampaign', 'images/american-campaign.png', 'American Campaign', 'Domestic Service', 'border-blue-400');
                     renderCard('muc', 'images/muc.png', 'Meritorious Unit', '257th Engineers', 'border-red-600');
-                    renderCard('driver', 'images/driver.png', 'Driver & Mechanic', 'Driver-W Bar', 'border-gray-500');
-                    renderCard('marksman', 'images/marksman.png', 'Marksman Badge', 'Rifle Component', 'border-gray-500');
+                    
+                    // Badges get size increase to max-h-16
+                    renderCard('driver', 'images/driver.png', 'Driver & Mechanic', 'Driver-W Bar', 'border-gray-500', 'max-h-16');
+                    renderCard('marksman', 'images/marksman.png', 'Marksman Badge', 'Rifle Component', 'border-gray-500', 'max-h-16');
                 </script>
             </div>
         </div>
@@ -327,12 +343,12 @@
         <div class="container mx-auto px-6">
             <h4 class="text-brass font-serif font-bold text-lg mb-4">Pvt. Paul F. Costa (1943-1945)</h4>
             <div class="w-16 h-px bg-gray-700 mx-auto mb-6"></div>
-            <p class="text-xs font-mono opacity-60 leading-relaxed mb-8 max-w-lg mx-auto">
+            <!-- Copyright text removed per request -->
+            <p class="text-xs font-mono opacity-60 leading-relaxed max-w-lg mx-auto">
                 All historical data compiled from National Archives & Records Administration (NARA) 
                 Morning Reports, Separation Documents (WD AGO 53-55), and 
                 Department of Veterans Affairs records.
             </p>
-            <p class="text-[10px] opacity-40 uppercase tracking-widest">&copy; 2023 WWII Service Record Archive</p>
         </div>
     </footer>
 
@@ -378,7 +394,7 @@
         // Initialize Map
         var map = L.map('map', {
             scrollWheelZoom: false,
-            zoomControl: false // moved custom zoom below or disabled for aesthetic
+            zoomControl: false // moved custom zoom below
         }).setView([49.5, -5.0], 4);
         
         L.control.zoom({ position: 'topright' }).addTo(map);
