@@ -45,8 +45,8 @@
         /* Photo Frame */
         .photo-frame {
             background-color: white;
-            padding: 8px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+            padding: 12px;
+            box-shadow: 2px 4px 12px rgba(0,0,0,0.5);
             transform: rotate(0deg); 
             transition: transform 0.3s ease;
         }
@@ -105,28 +105,28 @@
             <h1 class="text-4xl md:text-7xl font-black mb-2 tracking-tight font-serif text-white">Private Paul F. Costa</h1>
             <p class="text-xl md:text-2xl text-gray-400 font-light tracking-wide mb-8 font-sans">U.S. Army | MOS 931 (Truck Driver, Heavy) | 1943–1945</p>
 
-            <div class="flex flex-col md:flex-row items-center justify-center gap-12 mt-12">
-                <div class="group hidden md:block opacity-80 hover:opacity-100 transition">
-                     <img src="images/8th-af.png" alt="8th Air Force" class="h-24 w-auto drop-shadow-lg filter brightness-90">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-16 mt-12">
+                <div class="group hidden md:block opacity-90 hover:opacity-100 transition duration-300">
+                     <img src="images/8th-af.png" alt="8th Air Force" class="h-32 w-auto drop-shadow-2xl filter brightness-90">
                 </div>
 
-                <div class="photo-frame max-w-[220px] mx-auto z-20">
-                    <img src="images/paul-costa.jpg" alt="Pvt. Paul Costa" class="w-full h-auto filter sepia-[.3] contrast-110 grayscale-[.2]">
+                <div class="photo-frame max-w-[240px] z-20">
+                    <img src="images/paul-costa.jpg" alt="Pvt. Paul Costa" class="w-full h-auto filter sepia-[.15] contrast-110 grayscale-[.1]">
                 </div>
 
-                <div class="group hidden md:block opacity-80 hover:opacity-100 transition">
-                     <img src="images/7th-army.png" alt="7th Army" class="h-24 w-auto object-contain drop-shadow-lg filter brightness-90">
+                <div class="group hidden md:block opacity-90 hover:opacity-100 transition duration-300">
+                     <img src="images/7th-army.png" alt="7th Army" class="h-32 w-auto object-contain drop-shadow-2xl filter brightness-90">
                 </div>
             </div>
 
-            <div class="flex md:hidden justify-center gap-8 mt-8 opacity-80">
-                 <img src="images/8th-af.png" alt="8th Air Force" class="h-16 w-auto">
-                 <img src="images/7th-army.png" alt="7th Army" class="h-16 w-auto object-contain">
+            <div class="flex md:hidden justify-center gap-8 mt-8 opacity-90">
+                 <img src="images/8th-af.png" alt="8th Air Force" class="h-20 w-auto">
+                 <img src="images/7th-army.png" alt="7th Army" class="h-20 w-auto object-contain">
             </div>
 
-            <div class="mt-10">
-                <div class="inline-block bg-paper text-ink px-6 py-2 shadow-lg border border-gray-400">
-                    <p class="text-xs font-bold font-mono uppercase tracking-tight">Service Dates: 22 Mar 1943 – 16 Nov 1945</p>
+            <div class="mt-12 flex justify-center">
+                <div class="inline-block bg-paper text-ink px-8 py-3 shadow-lg border-2 border-gray-400">
+                    <p class="text-sm font-bold font-mono uppercase tracking-tight">Service Dates: 22 Mar 1943 – 16 Nov 1945</p>
                 </div>
             </div>
         </div>
@@ -431,7 +431,7 @@
             },
             'driver': { 
                 title: 'Driver & Mechanic Badge', 
-                body: `<p><strong>Criteria:</strong> Awarded to drivers and mechanics who demonstrate a high degree of skill in the operation and maintenance of military vehicles.</p>${noteBox('Qualification Record:', 'Qualified as Heavy Truck Driver (MOS 931) and Rifleman (745). Qualification form states: "Drove Army vehicles from 4-ton trucks to 10-ton semi trailers. Hauled rations on long hauls from England to Scotland."')}` 
+                body: `<p><strong>Criteria:</strong> Awarded to drivers and mechanics who demonstrate a high degree of skill in the operation and maintenance of military vehicles.</p>${noteBox('Qualification Record:', 'Qualified as Heavy Truck Driver (MOS 931). Qualification form states: "Drove Army vehicles from 4-ton trucks to 10-ton semi trailers. Hauled rations on long hauls from England to Scotland."')}` 
             },
             'marksman': { 
                 title: 'Marksman Badge', 
@@ -439,7 +439,7 @@
             },
             'muc': { 
                 title: 'Meritorious Unit Commendation', 
-                body: `<div class="italic text-gray-500 mb-2 font-serif text-sm">"For exceptionally meritorious conduct in the performance of outstanding services..."</div>${noteBox('Unit History:', 'The 257th Engineer Combat Battalion (H&S Company) distinguished itself during the Rhineland campaign, maintaining vital supply routes and bridges under combat conditions.')}` 
+                body: `<div class="italic text-gray-500 mb-2 font-serif text-sm">"For exceptionally meritorious conduct in the performance of outstanding services for at least six continuous months during the period of military operations against an armed enemy..."</div>${noteBox('Unit History:', 'The 257th Engineer Combat Battalion (H&S Company) distinguished itself during the Rhineland campaign, maintaining vital supply routes and bridges under combat conditions.')}` 
             }
         };
 
