@@ -42,12 +42,12 @@
         body { background-color: #f4f1ea; color: #2c2c2c; }
         html { scroll-behavior: smooth; }
         
-        /* Photo Border Effect - UPDATED: Rotation removed */
+        /* Photo Frame - Straightened per request */
         .photo-frame {
             background-color: white;
             padding: 8px;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
-            transform: rotate(0deg); /* Straightened photo */
+            transform: rotate(0deg); 
             transition: transform 0.3s ease;
         }
         .photo-frame:hover { transform: scale(1.02); }
@@ -125,8 +125,8 @@
             </div>
 
             <div class="mt-10">
-                <div class="inline-block bg-paper text-ink px-6 py-2 shadow-lg transform rotate-1 border border-gray-400">
-                    <p class="text-xs font-bold font-mono uppercase tracking-tight">Separation Date: 16 Nov 1945 | Fort Belvoir, VA</p>
+                <div class="inline-block bg-paper text-ink px-6 py-2 shadow-lg border border-gray-400">
+                    <p class="text-xs font-bold font-mono uppercase tracking-tight">Service Dates: 22 Mar 1943 – 16 Nov 1945</p>
                 </div>
             </div>
         </div>
@@ -138,13 +138,10 @@
             <h2 class="text-3xl font-bold text-ink mb-10 font-serif">Historical Overview</h2>
             <div class="prose prose-lg mx-auto text-gray-700 leading-relaxed">
                 <p class="mb-6">
-                    The World War II service of <span class="font-bold text-od-green">Pvt. Paul Costa</span> spans two distinct phases of the European conflict. Entering active service in March 1943, he first served as a heavy vehicle operator with the <strong>3rd Strategic Air Depot (8th Air Force)</strong>, based at Watton, England. 
+                    The military service of <span class="font-bold text-od-green">Pvt. Paul Costa</span> is characterized by two distinct phases. For the first year of his overseas deployment (1944), he served as a vital logistical operator for the <strong>8th Air Force</strong> in England, driving heavy convoys to sustain the strategic bombing campaign against Germany. 
                 </p>
                 <p class="mb-6">
-                    In October 1944, he deployed to <strong>France</strong> with the <strong>19th Mobile Repair & Reclamation Squadron</strong>, supporting forward airfields at Coulommiers and Valenciennes before returning to England.
-                </p>
-                <p>
-                    In early 1945, he transferred to the Ground Forces, eventually joining the <strong>257th Engineer Combat Battalion</strong> (7th Army) in <strong>Wassertrüdingen, Germany</strong>. He served through V-E Day and the subsequent occupation, utilizing his logistics skills to assist in the reconstruction of the American Occupation Zone.
+                   In early 1945, amidst the manpower shortages following the Battle of the Bulge, he was transferred from the Air Corps to the Ground Forces. After retraining, he joined the <strong>257th Engineer Combat Battalion</strong> (7th Army) in the final days of the war. He concluded his service in the American Occupation Zone of Germany, assisting in the reconstruction of civilian infrastructure and bridging operations.
                 </p>
             </div>
         </div>
@@ -184,8 +181,8 @@
                     </div>
                     <div class="pl-20 md:pl-0">
                         <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-blue-400 transition-colors duration-300">
-                            <h4 class="font-bold text-lg mb-2 text-ink">Camp Lee, Virginia</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Entered Active Service. Completed Quartermaster School. Qualified as <strong>Truck Driver, Heavy (MOS 931)</strong>.</p>
+                            <h4 class="font-bold text-lg mb-2 text-ink">Training & Specialist School</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Entered Active Service in New York. Completed Basic Training and Quartermaster School. Notably, in July 1943, he was placed on detached service at Greenville Army Air Base, SC, for specialized <strong>Fire Fighter</strong> training, indicating an initial role in airfield crash-rescue operations.</p>
                         </div>
                     </div>
                 </div>
@@ -194,13 +191,13 @@
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-brass rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
                          <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-brass transition-colors duration-300">
-                            <h4 class="font-bold text-lg mb-2 text-ink">Watton, England</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Arrived ETO. Assigned to <strong>52nd Station Comp. Sq</strong> (3rd Strategic Air Depot). Drove heavy convoys hauling aircraft engines and rations, including long-haul runs to Scotland.</p>
+                            <h4 class="font-bold text-lg mb-2 text-ink">Strategic Air Logistics</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Assigned to the <strong>52nd Station Complement Squadron</strong> at the 3rd Strategic Air Depot (Watton). As a Heavy Truck Driver (MOS 931), he operated 10-ton semi-trailers on long-haul supply runs from Scottish ports to East Anglian airbases, transporting aircraft engines and munitions to sustain the 8th Air Force bombing campaign.</p>
                         </div>
                     </div>
                     <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
                          <h3 class="text-2xl font-bold text-ink font-mono">08 Jan 1944</h3>
-                         <div class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Strategic Air Depot</div>
+                         <div class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">European Theater</div>
                     </div>
                 </div>
 
@@ -208,12 +205,12 @@
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-blue-600 rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
                         <h3 class="text-2xl font-bold text-ink font-mono">19 Oct 1944</h3>
-                        <div class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Forward Deployment</div>
+                        <div class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Forward Echelon</div>
                     </div>
                     <div class="pl-20 md:pl-0">
                         <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-blue-400 transition-colors duration-300">
                             <h4 class="font-bold text-lg mb-2 text-ink">Coulommiers & Valenciennes, France</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Deployed to the continent with the <strong>19th Mobile R&R Sq</strong> to support forward airfields (Stations B-58 & A-83). Returned to England Nov 18, 1944.</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">Deployed to the continent with the <strong>19th Mobile Repair & Reclamation Squadron</strong>. Operated from forward tactical airfields (Stations B-58 & A-83) near the Belgian border, supporting the salvage and repair of aircraft closer to the front lines. Returned to England in November 1944.</p>
                         </div>
                     </div>
                 </div>
@@ -222,8 +219,8 @@
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-orange-500 rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
                          <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-orange-400 transition-colors duration-300">
-                            <h4 class="font-bold text-lg mb-2 text-ink">12th Reinforcement Depot</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Transferred from Air Corps to Ground Forces for infantry/engineer retraining during the "Repl Depple" shuffle to support the final push into Germany.</p>
+                            <h4 class="font-bold text-lg mb-2 text-ink">The "Repl Depple" Pipeline</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Officially relieved from the Air Corps and transferred to the <strong>12th Reinforcement Depot</strong>. This marked his transition to the Ground Forces, driven by the Army's critical need for infantry replacements following the Battle of the Bulge. Underwent retraining for combat duty.</p>
                         </div>
                     </div>
                     <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
@@ -240,8 +237,8 @@
                     </div>
                     <div class="pl-20 md:pl-0">
                         <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-red-400 transition-colors duration-300">
-                            <h4 class="font-bold text-lg mb-2 text-ink">Wassertrüdingen, Germany</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Assigned to <strong>257th Engineer Combat Battalion</strong> just days before the end of the war. Moved to Aichach, Germany for V-E Day (May 8).</p>
+                            <h4 class="font-bold text-lg mb-2 text-ink">Wassertrüdingen & Aichach, Germany</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Assigned to <strong>H&S Company, 257th Engineer Combat Battalion</strong> just five days before the end of the war. On <strong>V-E Day (May 8, 1945)</strong>, he was stationed in Aichach, Germany, celebrating the victory he had helped support logistically for two years.</p>
                         </div>
                     </div>
                 </div>
@@ -250,13 +247,13 @@
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-od-green rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
                          <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-od-green transition-colors duration-300">
-                            <h4 class="font-bold text-lg mb-2 text-ink">Occupation Duty</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Stationed in <strong>Nordlingen</strong> and <strong>Sulzbach</strong>. Promoted to PFC. Transferred to Marburg depot in August 1945 for return to USA.</p>
+                            <h4 class="font-bold text-lg mb-2 text-ink">Occupation & Reconstruction</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Served in the American Occupation Zone at <strong>Nördlingen</strong> and <strong>Sulzbach</strong>. Promoted to PFC on May 31, 1945. The unit was engaged in rebuilding civilian infrastructure and maintaining order. In August, he transferred to the Marburg depot for medical treatment and eventual transport home.</p>
                         </div>
                     </div>
                     <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
                          <h3 class="text-2xl font-bold text-ink font-mono">Summer 1945</h3>
-                         <div class="inline-block bg-green-100 text-green-900 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Germany</div>
+                         <div class="inline-block bg-green-100 text-green-900 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Occupation Duty</div>
                     </div>
                 </div>
                 
@@ -269,7 +266,7 @@
                     <div class="pl-20 md:pl-0">
                          <div class="bg-transparent border-l-4 border-gray-400 pl-6">
                             <h4 class="font-bold text-lg mb-1 text-ink">Fort Belvoir, Virginia</h4>
-                            <p class="text-gray-600 text-sm italic">Service concludes at Separation Center.</p>
+                            <p class="text-gray-600 text-sm italic">Separated from the service at the completion of the war.</p>
                         </div>
                     </div>
                 </div>
