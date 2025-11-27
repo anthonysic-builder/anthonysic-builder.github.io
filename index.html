@@ -110,17 +110,15 @@
                 Truck Driver, Heavy (MOS 931) • Combat Engineer • Rifleman
             </p>
 
-            <!-- 
-               UPDATED LAYOUT: 
-               We now use 'w-64' on the side elements to ensure they are the exact same width.
-               This forces the middle photo to be perfectly centered.
-            -->
             <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
                 
                 <!-- Left Patch (8th AF) - Fixed Width Container -->
                 <div class="group hidden md:flex flex-col items-center w-64 transition duration-500 hover:-translate-y-1">
                      <img src="images/8th-af.png" alt="8th Air Force Patch" class="h-40 w-auto drop-shadow-2xl filter brightness-90 hover:brightness-100 transition">
-                     <p class="text-[10px] text-gray-400 mt-2 font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition text-center">8th Air Force</p>
+                     <div class="mt-4 text-center opacity-0 group-hover:opacity-100 transition duration-300 transform translate-y-2 group-hover:translate-y-0">
+                         <p class="text-xs text-brass font-bold font-mono uppercase tracking-widest">8th Air Force</p>
+                         <p class="text-[10px] text-gray-400 font-serif italic mt-1">"The Mighty Eighth"</p>
+                     </div>
                 </div>
 
                 <!-- Center Photo -->
@@ -131,7 +129,10 @@
                 <!-- Right Patch (7th Army) - Fixed Width Container -->
                 <div class="group hidden md:flex flex-col items-center w-64 transition duration-500 hover:-translate-y-1">
                      <img src="images/7th-army.png" alt="7th Army Patch" class="h-40 w-auto object-contain drop-shadow-2xl filter brightness-90 hover:brightness-100 transition">
-                     <p class="text-[10px] text-gray-400 mt-2 font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition text-center">7th Army</p>
+                     <div class="mt-4 text-center opacity-0 group-hover:opacity-100 transition duration-300 transform translate-y-2 group-hover:translate-y-0">
+                         <p class="text-xs text-brass font-bold font-mono uppercase tracking-widest">7th Army</p>
+                         <p class="text-[10px] text-gray-400 font-serif italic mt-1">"Seven Steps to Hell"</p>
+                     </div>
                 </div>
             </div>
 
