@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pvt. Paul F. Costa | WWII Service Record</title>
     
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
@@ -46,15 +42,15 @@
         body { background-color: #f4f1ea; color: #2c2c2c; }
         html { scroll-behavior: smooth; }
         
-        /* Photo Border Effect */
+        /* Photo Border Effect - UPDATED: Rotation removed */
         .photo-frame {
             background-color: white;
             padding: 8px;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
-            transform: rotate(-2deg);
+            transform: rotate(0deg); /* Straightened photo */
             transition: transform 0.3s ease;
         }
-        .photo-frame:hover { transform: rotate(0deg) scale(1.02); }
+        .photo-frame:hover { transform: scale(1.02); }
 
         /* Timeline Styles */
         .timeline-line {
@@ -90,7 +86,6 @@
 </head>
 <body class="antialiased">
 
-    <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-navy-dark text-paper z-50 shadow-md bg-opacity-95 backdrop-blur-sm border-b-2 border-brass">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <span class="font-mono text-sm tracking-widest uppercase text-brass font-bold">Official File</span>
@@ -102,7 +97,6 @@
         </div>
     </nav>
 
-    <!-- Header -->
     <header class="bg-navy-dark text-paper pt-32 pb-24 relative overflow-hidden border-b-8 border-brass">
         <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
         <div class="container mx-auto px-4 text-center relative z-10 reveal active">
@@ -111,25 +105,20 @@
             <h1 class="text-4xl md:text-7xl font-black mb-2 tracking-tight font-serif text-white">Private Paul F. Costa</h1>
             <p class="text-xl md:text-2xl text-gray-400 font-light tracking-wide mb-8 font-sans">U.S. Army | MOS 931 (Truck Driver, Heavy) | 1943–1945</p>
 
-            <!-- Portrait Photo Section -->
             <div class="flex flex-col md:flex-row items-center justify-center gap-12 mt-12">
-                <!-- 8th AF Patch -->
                 <div class="group hidden md:block opacity-80 hover:opacity-100 transition">
                      <img src="images/8th-af.png" alt="8th Air Force" class="h-24 w-auto drop-shadow-lg filter brightness-90">
                 </div>
 
-                <!-- Main Portrait -->
                 <div class="photo-frame max-w-[220px] mx-auto z-20">
                     <img src="images/paul-costa.jpg" alt="Pvt. Paul Costa" class="w-full h-auto filter sepia-[.3] contrast-110 grayscale-[.2]">
                 </div>
 
-                <!-- 7th Army Patch -->
-                 <div class="group hidden md:block opacity-80 hover:opacity-100 transition">
+                <div class="group hidden md:block opacity-80 hover:opacity-100 transition">
                      <img src="images/7th-army.png" alt="7th Army" class="h-24 w-auto object-contain drop-shadow-lg filter brightness-90">
                 </div>
             </div>
 
-            <!-- Mobile Patches (shown below photo on small screens) -->
             <div class="flex md:hidden justify-center gap-8 mt-8 opacity-80">
                  <img src="images/8th-af.png" alt="8th Air Force" class="h-16 w-auto">
                  <img src="images/7th-army.png" alt="7th Army" class="h-16 w-auto object-contain">
@@ -143,23 +132,24 @@
         </div>
     </header>
 
-    <!-- Overview Section -->
     <section id="overview" class="py-24 bg-paper">
         <div class="container mx-auto px-6 max-w-4xl text-center reveal">
             <div class="w-16 h-1 bg-brass mx-auto mb-8"></div>
             <h2 class="text-3xl font-bold text-ink mb-10 font-serif">Historical Overview</h2>
             <div class="prose prose-lg mx-auto text-gray-700 leading-relaxed">
                 <p class="mb-6">
-                    The World War II service of <span class="font-bold text-od-green">Pvt. Paul Costa</span> spans two distinct phases of the European conflict. Entering active service in March 1943, he first served as a heavy vehicle operator with the <strong>3rd Strategic Air Depot (8th Air Force)</strong>, based at Watton, England. His primary duty involved hauling vital munitions and rations across the UK—including long-haul convoys from England to Scotland—to sustain the strategic bombing campaign.
+                    The World War II service of <span class="font-bold text-od-green">Pvt. Paul Costa</span> spans two distinct phases of the European conflict. Entering active service in March 1943, he first served as a heavy vehicle operator with the <strong>3rd Strategic Air Depot (8th Air Force)</strong>, based at Watton, England. 
+                </p>
+                <p class="mb-6">
+                    In October 1944, he deployed to <strong>France</strong> with the <strong>19th Mobile Repair & Reclamation Squadron</strong>, supporting forward airfields at Coulommiers and Valenciennes before returning to England.
                 </p>
                 <p>
-                    In early 1945, he transferred to the Ground Forces, staging through France before joining the <strong>257th Engineer Combat Battalion</strong> (7th Army). He served in Germany through the end of hostilities and into the Occupation, utilizing his secondary qualification as a Rifleman (MOS 745) and his primary logistics skills to assist in the reconstruction of the American Occupation Zone.
+                    In early 1945, he transferred to the Ground Forces, eventually joining the <strong>257th Engineer Combat Battalion</strong> (7th Army) in <strong>Wassertrüdingen, Germany</strong>. He served through V-E Day and the subsequent occupation, utilizing his logistics skills to assist in the reconstruction of the American Occupation Zone.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Map Section -->
     <section class="bg-paper-dark border-y border-gray-300 shadow-inner">
         <div class="w-full relative group h-[600px] vintage-map" id="map-container">
             <div id="map" class="h-full w-full z-0"></div>
@@ -170,13 +160,12 @@
                     <h3 class="font-bold text-ink text-sm font-mono uppercase">Deployment Vector</h3>
                 </div>
                 <p class="text-xs text-gray-600 font-sans leading-relaxed">
-                    Interactive visualization derived from Separation Records (Form 100). Click numbered markers to view Unit and Date details at each station.
+                    Interactive visualization derived from Separation Records (Form 100) and Unit Morning Reports. Click numbered markers to view Unit and Date details at each station.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Timeline Section -->
     <section id="timeline" class="py-24 bg-paper">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="text-center mb-16 reveal">
@@ -187,7 +176,6 @@
             <div class="relative">
                 <div class="timeline-line absolute left-8 md:left-1/2 top-0 bottom-0 transform md:-translate-x-1/2 bg-gray-300"></div>
 
-                <!-- 1. Induction (Right) -->
                 <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-navy-dark rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
@@ -197,83 +185,92 @@
                     <div class="pl-20 md:pl-0">
                         <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-blue-400 transition-colors duration-300">
                             <h4 class="font-bold text-lg mb-2 text-ink">Camp Lee, Virginia</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Entered Active Service. Completed Quartermaster School. Qualified as <strong>Truck Driver, Heavy (MOS 931)</strong> and Marksman (Rifle).</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">Entered Active Service. Completed Quartermaster School. Qualified as <strong>Truck Driver, Heavy (MOS 931)</strong>.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. England (Left) -->
                 <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-brass rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
                          <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-brass transition-colors duration-300">
                             <h4 class="font-bold text-lg mb-2 text-ink">Watton, England</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Attached to <strong>52nd Station Comp. Sq (3rd Strategic Air Depot)</strong>. Separation records note: <em>"Drove Army vehicles from 4-ton trucks to 10-ton semis... hauled rations on long hauls from England to Scotland."</em></p>
+                            <p class="text-gray-600 text-sm leading-relaxed">Arrived ETO. Assigned to <strong>52nd Station Comp. Sq</strong> (3rd Strategic Air Depot). Drove heavy convoys hauling aircraft engines and rations, including long-haul runs to Scotland.</p>
                         </div>
                     </div>
                     <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
-                         <h3 class="text-2xl font-bold text-ink font-mono">21 Sep 1943</h3>
-                         <div class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Arrived ETO</div>
+                         <h3 class="text-2xl font-bold text-ink font-mono">08 Jan 1944</h3>
+                         <div class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Strategic Air Depot</div>
                     </div>
                 </div>
 
-                <!-- 3. France / Staging (Right - ADDED BACK) -->
-                 <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
-                    <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-orange-500 rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
+                <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
+                    <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-blue-600 rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
                     <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
-                        <h3 class="text-2xl font-bold text-ink font-mono">April 1945</h3>
-                        <div class="inline-block bg-orange-100 text-orange-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Reclassification</div>
+                        <h3 class="text-2xl font-bold text-ink font-mono">19 Oct 1944</h3>
+                        <div class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Forward Deployment</div>
                     </div>
                     <div class="pl-20 md:pl-0">
-                        <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-orange-400 transition-colors duration-300">
-                            <h4 class="font-bold text-lg mb-2 text-ink">Thaon-les-Vosges, France</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Ground Forces Replacement Depot. Prepared for combat unit transfer. Validated MOS 745 (Rifleman) for transfer to Army Ground Forces.</p>
+                        <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-blue-400 transition-colors duration-300">
+                            <h4 class="font-bold text-lg mb-2 text-ink">Coulommiers & Valenciennes, France</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Deployed to the continent with the <strong>19th Mobile R&R Sq</strong> to support forward airfields (Stations B-58 & A-83). Returned to England Nov 18, 1944.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4. Combat Transfer (Left) -->
+                <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
+                    <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-orange-500 rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
+                    <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
+                         <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-orange-400 transition-colors duration-300">
+                            <h4 class="font-bold text-lg mb-2 text-ink">12th Reinforcement Depot</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Transferred from Air Corps to Ground Forces for infantry/engineer retraining during the "Repl Depple" shuffle to support the final push into Germany.</p>
+                        </div>
+                    </div>
+                    <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
+                         <h3 class="text-2xl font-bold text-ink font-mono">28 Jan 1945</h3>
+                         <div class="inline-block bg-orange-100 text-orange-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Reclassification</div>
+                    </div>
+                </div>
+
                 <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-red-700 rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
-                    <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
-                         <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-red-400 transition-colors duration-300">
-                            <h4 class="font-bold text-lg mb-2 text-ink">Nordlingen, Germany</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed">Assigned to <strong>257th Engineer Combat Battalion</strong> per SO 119, 2nd Reinf Depot. Joined the unit in the field 6 days before V-E Day.</p>
-                        </div>
+                    <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
+                        <h3 class="text-2xl font-bold text-ink font-mono">03 May 1945</h3>
+                        <div class="inline-block bg-red-100 text-red-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Combat Engineers</div>
                     </div>
-                    <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
-                        <h3 class="text-2xl font-bold text-ink font-mono">08 May 1945</h3>
-                        <div class="inline-block bg-red-100 text-red-800 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Joined Unit</div>
+                    <div class="pl-20 md:pl-0">
+                        <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-red-400 transition-colors duration-300">
+                            <h4 class="font-bold text-lg mb-2 text-ink">Wassertrüdingen, Germany</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Assigned to <strong>257th Engineer Combat Battalion</strong> just days before the end of the war. Moved to Aichach, Germany for V-E Day (May 8).</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 5. Occupation (Right) -->
                 <div class="relative mb-20 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-paper border-4 border-od-green rounded-full transform -translate-x-1/2 z-10 shadow-lg"></div>
-                    <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
-                         <h3 class="text-2xl font-bold text-ink font-mono">Summer 1945</h3>
-                         <div class="inline-block bg-green-100 text-green-900 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Occupation</div>
-                    </div>
-                    <div class="pl-20 md:pl-0">
-                         <div class="bg-white p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-od-green transition-colors duration-300">
-                            <h4 class="font-bold text-lg mb-2 text-ink">Occupied Germany</h4>
-                            <p class="text-gray-600 text-sm leading-relaxed"><strong>Sulzbach & Marburg.</strong> Service with H&S Company, 257th ECB. Unit engaged in bridge repair, infrastructure rebuilding, and constabulary duties.</p>
+                    <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
+                         <div class="bg-white p-8 shadow-[-6px_6px_0px_0px_rgba(0,0,0,0.1)] border border-gray-200 hover:border-od-green transition-colors duration-300">
+                            <h4 class="font-bold text-lg mb-2 text-ink">Occupation Duty</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">Stationed in <strong>Nordlingen</strong> and <strong>Sulzbach</strong>. Promoted to PFC. Transferred to Marburg depot in August 1945 for return to USA.</p>
                         </div>
+                    </div>
+                    <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
+                         <h3 class="text-2xl font-bold text-ink font-mono">Summer 1945</h3>
+                         <div class="inline-block bg-green-100 text-green-900 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Germany</div>
                     </div>
                 </div>
                 
-                 <!-- 6. Discharge (Left) -->
                  <div class="relative mb-4 md:grid md:grid-cols-2 md:gap-16 items-center reveal">
                     <div class="absolute left-8 md:left-1/2 w-4 h-4 bg-gray-800 rounded-full transform -translate-x-1/2 z-10"></div>
-                    <div class="pl-20 md:pl-0 md:text-right md:row-start-1">
-                         <div class="bg-transparent border-r-4 border-gray-400 pr-6">
+                    <div class="pl-20 md:pl-0 md:text-right mb-4 md:mb-0">
+                        <h3 class="text-2xl font-bold text-ink font-mono">16 Nov 1945</h3>
+                        <div class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Honorable Discharge</div>
+                    </div>
+                    <div class="pl-20 md:pl-0">
+                         <div class="bg-transparent border-l-4 border-gray-400 pl-6">
                             <h4 class="font-bold text-lg mb-1 text-ink">Fort Belvoir, Virginia</h4>
                             <p class="text-gray-600 text-sm italic">Service concludes at Separation Center.</p>
                         </div>
-                    </div>
-                    <div class="pl-20 md:pl-0 mb-4 md:mb-0 md:row-start-1">
-                        <h3 class="text-2xl font-bold text-ink font-mono">16 Nov 1945</h3>
-                        <div class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 uppercase rounded mt-1 font-mono">Honorable Discharge</div>
                     </div>
                 </div>
 
@@ -281,7 +278,6 @@
         </div>
     </section>
 
-    <!-- Awards Section -->
     <section id="awards" class="py-24 bg-paper-dark border-t border-gray-300">
         <div class="container mx-auto px-4 max-w-7xl reveal">
             <div class="text-center mb-16">
@@ -290,7 +286,6 @@
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
-                <!-- Helper Script for cards -->
                 <script>
                     const renderCard = (id, img, title, subtitle, borderHover, imgClass = 'max-h-12') => {
                         document.write(`
@@ -312,7 +307,6 @@
                     };
                 </script>
 
-                <!-- Cards Rendered via JS -->
                 <script>
                     renderCard('goodconduct', 'images/good-conduct.png', 'Good Conduct', 'Efficiency & Fidelity', 'border-red-800');
                     renderCard('americancampaign', 'images/american-campaign.png', 'American Campaign', 'Domestic Service', 'border-blue-400');
@@ -327,7 +321,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-navy-dark text-gray-400 py-16 text-center border-t-8 border-brass">
         <div class="container mx-auto px-6">
             <h4 class="text-brass font-serif font-bold text-lg mb-4">Pvt. Paul F. Costa (1943-1945)</h4>
@@ -340,7 +333,6 @@
         </div>
     </footer>
 
-    <!-- Modal -->
     <div id="modal" class="modal opacity-0 pointer-events-none fixed inset-0 z-[2000] flex items-center justify-center p-4">
         <div class="modal-overlay absolute inset-0 bg-navy-dark opacity-80 backdrop-blur-sm" onclick="closeModal()"></div>
         <div class="bg-paper w-full max-w-lg mx-auto rounded-sm shadow-2xl z-50 transform scale-95 transition-transform duration-200" id="modal-panel">
@@ -363,7 +355,6 @@
         </div>
     </div>
 
-    <!-- Map Script -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script>
         const revealElements = document.querySelectorAll('.reveal');
@@ -379,7 +370,7 @@
         var map = L.map('map', {
             scrollWheelZoom: false,
             zoomControl: false 
-        }).setView([48.0, -15.0], 3); 
+        }).setView([50.0, 5.0], 5); 
         L.control.zoom({ position: 'topright' }).addTo(map);
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -389,11 +380,12 @@
 
         var locations = [
             { id: 1, name: "Camp Lee, VA", date: "Mar 22, 1943", unit: "QM School (Basic)", coords: [37.23, -77.33] },
-            { id: 2, name: "Watton, England", date: "Sep 21, 1943", unit: "3rd Strategic Air Depot", coords: [52.57, 0.82] },
-            { id: 3, name: "Thaon-les-Vosges", date: "Apr 1945", unit: "Ground Force Reinforcement", coords: [48.25, 6.42] },
-            { id: 4, name: "Nordlingen, Germany", date: "May 8, 1945", unit: "257th Eng. Combat Bn", coords: [48.85, 10.49] },
-            { id: 5, name: "Sulzbach, Germany", date: "July 1945", unit: "H&S Co 257th ECB", coords: [50.80, 8.76] },
-            { id: 6, name: "Fort Belvoir, VA", date: "Nov 16, 1945", unit: "Separation Center", coords: [38.71, -77.14] }
+            { id: 2, name: "Watton, England", date: "Jan 8, 1944", unit: "3rd Strategic Air Depot", coords: [52.57, 0.82] },
+            { id: 3, name: "Coulommiers, France", date: "Oct 19, 1944", unit: "19th Mobile R&R Sq", coords: [48.81, 3.08] },
+            { id: 4, name: "Valenciennes, France", date: "Nov 14, 1944", unit: "19th Mobile R&R Sq", coords: [50.35, 3.52] },
+            { id: 5, name: "Wassertrüdingen, Germany", date: "May 3, 1945", unit: "257th Eng. Combat Bn", coords: [49.04, 10.60] },
+            { id: 6, name: "Aichach, Germany", date: "May 8, 1945", unit: "V-E Day Location", coords: [48.46, 11.13] },
+            { id: 7, name: "Fort Belvoir, VA", date: "Nov 16, 1945", unit: "Separation Center", coords: [38.71, -77.14] }
         ];
 
         var latlngs = locations.map(loc => loc.coords);
@@ -435,7 +427,7 @@
             },
             'americancampaign': { 
                 title: 'American Campaign Medal', 
-                body: `<p><strong>Criteria:</strong> Awarded to service members who performed military duty within the American Theater of Operations between December 7, 1941, and March 2, 1946.</p>${noteBox('Service Record:', 'Acknowledges service within CONUS (Continental United States) prior to departure for England in Sept 1943.')}` 
+                body: `<p><strong>Criteria:</strong> Awarded to service members who performed military duty within the American Theater of Operations between December 7, 1941, and March 2, 1946.</p>${noteBox('Service Record:', 'Acknowledges service within CONUS (Continental United States) prior to departure for England in Jan 1944.')}` 
             },
             'driver': { 
                 title: 'Driver & Mechanic Badge', 
