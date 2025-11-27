@@ -110,28 +110,39 @@
                 Truck Driver, Heavy (MOS 931) • Combat Engineer<br>8th Air Force & 7th Army
             </p>
 
+            <!-- 
+               UPDATED LAYOUT: 
+               We now use 'w-64' on the side elements to ensure they are the exact same width.
+               This forces the middle photo to be perfectly centered.
+            -->
             <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-                <div class="group hidden md:block transition duration-500 hover:-translate-y-1">
+                
+                <!-- Left Patch (8th AF) - Fixed Width Container -->
+                <div class="group hidden md:flex flex-col items-center w-64 transition duration-500 hover:-translate-y-1">
                      <img src="images/8th-af.png" alt="8th Air Force Patch" class="h-40 w-auto drop-shadow-2xl filter brightness-90 hover:brightness-100 transition">
-                     <p class="text-[10px] text-gray-400 mt-2 font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">8th Air Force</p>
+                     <p class="text-[10px] text-gray-400 mt-2 font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition text-center">8th Air Force</p>
                 </div>
 
-                <div class="photo-frame max-w-[260px] z-20">
+                <!-- Center Photo -->
+                <div class="photo-frame max-w-[260px] z-20 mx-auto">
                     <img src="images/paul-costa.jpg" alt="Pvt. Paul Costa in Uniform" class="w-full h-auto filter sepia-[.10] contrast-110 grayscale-[.1]">
                 </div>
 
-                <div class="group hidden md:block transition duration-500 hover:-translate-y-1">
+                <!-- Right Patch (7th Army) - Fixed Width Container -->
+                <div class="group hidden md:flex flex-col items-center w-64 transition duration-500 hover:-translate-y-1">
                      <img src="images/7th-army.png" alt="7th Army Patch" class="h-40 w-auto object-contain drop-shadow-2xl filter brightness-90 hover:brightness-100 transition">
-                     <p class="text-[10px] text-gray-400 mt-2 font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">7th Army</p>
+                     <p class="text-[10px] text-gray-400 mt-2 font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition text-center">7th Army</p>
                 </div>
             </div>
 
+            <!-- Mobile Only Patches -->
             <div class="flex md:hidden justify-center gap-12 mt-10 opacity-90">
                  <img src="images/8th-af.png" alt="8th Air Force Patch" class="h-24 w-auto">
                  <img src="images/7th-army.png" alt="7th Army Patch" class="h-24 w-auto object-contain">
             </div>
 
-            <div class="mt-16">
+            <!-- Service Dates Banner - Explicitly Centered -->
+            <div class="mt-16 flex justify-center">
                 <div class="inline-block bg-paper text-ink px-6 md:px-10 py-3 shadow-xl border border-gray-400 rounded-sm">
                     <p class="text-xs md:text-sm font-bold font-mono uppercase tracking-widest text-center">Service Dates: 22 Mar 1943 – 16 Nov 1945</p>
                 </div>
