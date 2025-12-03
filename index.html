@@ -324,7 +324,7 @@
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
                 <script>
-                    // UPDATED: Fixed height container (h-20) used for image to ensure perfect text alignment
+                    // UPDATED: Removed mb-2 from the image container to reduce space
                     const renderCard = (id, img, title, subtitle, borderHover, imgClass = 'max-h-12', wrapperClass = '') => {
                         let subHtml = subtitle ? `<p class="text-[10px] uppercase tracking-wider text-gray-500 font-bold font-mono mt-2">${subtitle}</p>` : '';
                         document.write(`
@@ -333,7 +333,7 @@
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 </div>
                                 <div class="flex flex-col h-full justify-start">
-                                    <div class="h-20 w-full flex items-start justify-center mb-2">
+                                    <div class="h-20 w-full flex items-start justify-center">
                                         <img src="${img}" alt="${title}" class="${imgClass} w-auto drop-shadow-sm filter contrast-110">
                                     </div>
                                     <div class="text-center">
