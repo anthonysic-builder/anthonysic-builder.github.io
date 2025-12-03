@@ -324,10 +324,11 @@
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
                 <script>
-                    const renderCard = (id, img, title, subtitle, borderHover, imgClass = 'max-h-12') => {
+                    // UPDATED: Added a wrapperClass parameter at the end
+                    const renderCard = (id, img, title, subtitle, borderHover, imgClass = 'max-h-12', wrapperClass = '') => {
                         let subHtml = subtitle ? `<p class="text-[10px] uppercase tracking-wider text-gray-500 font-bold font-mono mt-2">${subtitle}</p>` : '';
                         document.write(`
-                            <div onclick="openModal('${id}')" class="bg-white p-6 rounded-sm shadow-card cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden border-b-4 border-transparent hover:${borderHover}">
+                            <div onclick="openModal('${id}')" class="bg-white p-6 rounded-sm shadow-card cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden border-b-4 border-transparent hover:${borderHover} ${wrapperClass}">
                                 <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition text-gray-400">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 </div>
@@ -346,7 +347,6 @@
                 </script>
 
                 <script>
-                    // Items 1-8 displayed in grid
                     renderCard('goodconduct', 'images/good-conduct.png', 'Good Conduct', '', 'border-red-800');
                     renderCard('americancampaign', 'images/american-campaign.png', 'American Campaign', '', 'border-blue-400');
                     renderCard('eame', 'images/eame.png?v=2', 'EAME Campaign', '1 Bronze Star', 'border-yellow-600');
@@ -355,14 +355,12 @@
                     renderCard('muc', 'images/muc.png', 'Meritorious Unit', '257th Engineers', 'border-red-600');
                     renderCard('driver', 'images/driver.png', 'Driver & Mechanic', 'Driver-W Bar', 'border-gray-500', 'max-h-16');
                     renderCard('marksman', 'images/marksman.png', 'Marksman Badge', 'Rifle Component', 'border-gray-500', 'max-h-16');
-                </script>
-            </div> 
-            <div class="flex flex-wrap justify-center gap-4 md:gap-8 mt-4 md:mt-8">
-                <script>
-                    // Items 9-10 centered below
-                    renderCard('rupturedduck', 'images/ruptured_duck.png', 'WWII Honorable Discharge', 'Ruptured Duck', 'border-brass');
-                    // Removed the 'max-h-8' constraint so it defaults to larger max-h-12
-                    renderCard('overseasbars', 'images/overseas_bar.png', 'Overseas Service Bars', '3 Bars', 'border-od-green');
+                    
+                    // UPDATED: Ruptured Duck now inside main grid, with lg:col-start-2
+                    renderCard('rupturedduck', 'images/ruptured_duck.png', 'Honorable Discharge', 'Ruptured Duck', 'border-brass', 'max-h-12', 'lg:col-start-2');
+                    
+                    // UPDATED: Overseas Bars now inside main grid, size limit removed to match others
+                    renderCard('overseasbars', 'images/overseas_bar.png', 'Overseas Service Bars', '3 Bars', 'border-od-green', 'max-h-12');
                 </script>
             </div>
         </div>
