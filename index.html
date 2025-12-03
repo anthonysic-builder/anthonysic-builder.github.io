@@ -324,7 +324,7 @@
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
                 <script>
-                    // UPDATED: changed items-center to items-start to align ribbon tops
+                    // UPDATED: Fixed height container (h-20) used for image to ensure perfect text alignment
                     const renderCard = (id, img, title, subtitle, borderHover, imgClass = 'max-h-12', wrapperClass = '') => {
                         let subHtml = subtitle ? `<p class="text-[10px] uppercase tracking-wider text-gray-500 font-bold font-mono mt-2">${subtitle}</p>` : '';
                         document.write(`
@@ -332,11 +332,11 @@
                                 <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition text-gray-400">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 </div>
-                                <div class="flex flex-col items-center h-full justify-between">
-                                    <div class="flex-grow flex items-start justify-center w-full mb-4 pt-2">
+                                <div class="flex flex-col h-full justify-start">
+                                    <div class="h-20 w-full flex items-start justify-center mb-2">
                                         <img src="${img}" alt="${title}" class="${imgClass} w-auto drop-shadow-sm filter contrast-110">
                                     </div>
-                                    <div class="text-center pb-2">
+                                    <div class="text-center">
                                         <h3 class="font-bold text-ink text-sm leading-tight font-serif group-hover:text-brass transition-colors">${title}</h3>
                                         ${subHtml}
                                     </div>
@@ -355,12 +355,7 @@
                     renderCard('muc', 'images/muc.png', 'Meritorious Unit', '257th Engineers', 'border-red-600');
                     renderCard('driver', 'images/driver.png', 'Driver & Mechanic', 'Driver-W Bar', 'border-gray-500', 'max-h-16');
                     renderCard('marksman', 'images/marksman.png', 'Marksman Badge', 'Rifle Component', 'border-gray-500', 'max-h-16');
-                    
-                    // UPDATED TITLE: Changed 'Honorable Discharge' to 'WWII Honorable Discharge'
-                    // UPDATED SIZE: Changed max-h-12 to max-h-16
                     renderCard('rupturedduck', 'images/ruptured_duck.png', 'WWII Honorable Discharge', 'Ruptured Duck', 'border-brass', 'max-h-16', 'lg:col-start-2');
-                    
-                    // UPDATED SIZE: Changed max-h-12 to max-h-16
                     renderCard('overseasbars', 'images/overseas_bar.png', 'Overseas Service Bars', '3 Bars', 'border-od-green', 'max-h-16');
                 </script>
             </div>
@@ -487,7 +482,6 @@
                 title: 'Meritorious Unit Commendation', 
                 body: `<div class="italic text-gray-500 mb-2 font-serif text-sm">"For exceptionally meritorious conduct in the performance of outstanding services for at least six continuous months during the period of military operations against an armed enemy..."</div>${noteBox('Unit History:', 'The 257th Engineer Combat Battalion (H&S Company) distinguished itself during the Rhineland campaign, maintaining vital supply routes and bridges under combat conditions.')}` 
             },
-            // UPDATED TITLE: Changed 'Honorable Discharge' to 'WWII Honorable Discharge'
             'rupturedduck': { 
                 title: 'WWII Honorable Discharge', 
                 body: `<p><strong>Criteria:</strong> Issued to all military personnel who were honorably discharged from service during World War II.</p>${noteBox('Historical Context:', 'Officially known as the Honorable Service Lapel Button. This gold-colored lapel pin allowed newly discharged veterans to wear their uniform for up to 30 days while traveling home, signifying they were no longer engaged in active duty.')}` 
