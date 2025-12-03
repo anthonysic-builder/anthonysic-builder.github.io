@@ -313,11 +313,11 @@
 
             <div class="max-w-4xl mx-auto mb-16 reveal active">
                 <div class="bg-white p-4 md:p-6 rounded-sm shadow-card border-b-4 border-brass relative group">
-                    <div class="text-center pb-2">
-                         <h3 class="font-bold text-ink text-sm leading-tight font-serif">Full Ribbon Rack</h3>
-                         </div>
-                    <div class="flex justify-center mt-2">
+                    <div class="flex justify-center mb-4">
                         <img src="images/costa_rack.jpg" alt="Complete Ribbon Rack" class="w-full h-auto object-contain max-h-32">
+                    </div>
+                    <div class="text-center">
+                         <h3 class="font-bold text-ink text-sm leading-tight font-serif">Full Ribbon Rack</h3>
                     </div>
                 </div>
             </div>
@@ -348,12 +348,14 @@
                 <script>
                     renderCard('goodconduct', 'images/good-conduct.png', 'Good Conduct', '', 'border-red-800');
                     renderCard('americancampaign', 'images/american-campaign.png', 'American Campaign', '', 'border-blue-400');
-                    renderCard('eame', 'images/eame.png', 'EAME Campaign', '1 Bronze Star', 'border-yellow-600');
+                    renderCard('eame', 'images/eame.png?v=2', 'EAME Campaign', '1 Bronze Star', 'border-yellow-600');
                     renderCard('victory', 'images/victory.png', 'WWII Victory', '', 'border-red-600');
                     renderCard('occupation', 'images/occupation.png', 'Army of Occupation', 'Germany Clasp', 'border-black');
                     renderCard('muc', 'images/muc.png', 'Meritorious Unit', '257th Engineers', 'border-red-600');
                     renderCard('driver', 'images/driver.png', 'Driver & Mechanic', 'Driver-W Bar', 'border-gray-500', 'max-h-16');
                     renderCard('marksman', 'images/marksman.png', 'Marksman Badge', 'Rifle Component', 'border-gray-500', 'max-h-16');
+                    renderCard('rupturedduck', 'images/ruptured_duck.png', 'Honorable Discharge', 'Ruptured Duck', 'border-brass');
+                    renderCard('overseasbars', 'images/overseas_bar.png', 'Overseas Service Bars', '3 Bars', 'border-od-green', 'max-h-8');
                 </script>
             </div>
         </div>
@@ -478,6 +480,14 @@
             'muc': { 
                 title: 'Meritorious Unit Commendation', 
                 body: `<div class="italic text-gray-500 mb-2 font-serif text-sm">"For exceptionally meritorious conduct in the performance of outstanding services for at least six continuous months during the period of military operations against an armed enemy..."</div>${noteBox('Unit History:', 'The 257th Engineer Combat Battalion (H&S Company) distinguished itself during the Rhineland campaign, maintaining vital supply routes and bridges under combat conditions.')}` 
+            },
+            'rupturedduck': { 
+                title: 'World War II Honorable Discharge', 
+                body: `<p><strong>Criteria:</strong> Issued to all military personnel who were honorably discharged from service during World War II.</p>${noteBox('Historical Context:', 'Officially known as the Honorable Service Lapel Button. This gold-colored lapel pin allowed newly discharged veterans to wear their uniform for up to 30 days while traveling home, signifying they were no longer engaged in active duty.')}` 
+            },
+            'overseasbars': { 
+                title: 'Army Overseas Service Bars', 
+                body: `<p><strong>Criteria:</strong> A cloth bar worn on the left sleeve of the uniform tunic, representing six months of active service outside the continental United States in a theater of operations.</p>${noteBox('Service Record:', 'Based on overseas service from Jan 1944 to Nov 1945 (approx. 22 months), authorized 3 Overseas Service Bars.')}` 
             }
         };
 
