@@ -110,13 +110,13 @@
                 Truck Driver, Heavy (MOS 931) • Combat Engineer • 8th Air Force & 7th Army
             </p>
 
-            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-16 mt-12 w-full">
                 <div class="group hidden md:block transition duration-500 hover:-translate-y-1">
                      <img src="images/8th-af.png" alt="8th Air Force Patch" class="h-40 w-auto drop-shadow-2xl filter brightness-90 hover:brightness-100 transition">
                      <p class="text-[10px] text-gray-400 mt-2 font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">8th Air Force</p>
                 </div>
 
-                <div class="photo-frame max-w-[260px] z-20">
+                <div class="photo-frame max-w-[260px] z-20 mx-auto">
                     <img src="images/paul-costa.jpg" alt="Pvt. Paul Costa in Uniform" class="w-full h-auto filter sepia-[.10] contrast-110 grayscale-[.1]">
                 </div>
 
@@ -151,7 +151,7 @@
                     In October 1944, he deployed to <strong>France</strong> with the <strong>19th Mobile Repair & Reclamation Squadron</strong>, supporting forward airfields at Coulommiers and Valenciennes before returning to England.
                 </p>
                 <p>
-                    In early 1945, responding to critical manpower needs, he transferred to the Ground Forces. After infantry retraining, he joined the <strong>257th Engineer Combat Battalion <span class="font-bold text-ink">(7th Army)</span></strong> in Wassertrüdingen, Germany. He served through V-E Day and the subsequent occupation, utilizing his logistics skills to assist in the reconstruction of the American Occupation Zone.
+                    In early 1945, responding to critical manpower needs, he transferred to the Ground Forces. After infantry retraining, he joined the <strong>257th Engineer Combat Battalion (7th Army)</strong> in Wassertrüdingen, Germany. He served through V-E Day and the subsequent occupation, utilizing his logistics skills to assist in the reconstruction of the American Occupation Zone.
                 </p>
             </div>
         </div>
@@ -289,12 +289,6 @@
                 <script>
                     const renderCard = (id, img, title, subtitle, borderHover, imgClass = 'max-h-12') => {
                         let subHtml = subtitle ? `<p class="text-[10px] uppercase tracking-wider text-gray-500 font-bold font-mono mt-2">${subtitle}</p>` : '';
-                        // Increased image size logic for specific cards
-                        let finalImgClass = imgClass;
-                        if (id === 'muc' || id === 'driver' || id === 'marksman') {
-                            finalImgClass = 'max-h-20'; // Larger size for requested badges
-                        }
-
                         document.write(`
                             <div onclick="openModal('${id}')" class="bg-white p-6 rounded-sm shadow-card cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden border-b-4 border-transparent hover:${borderHover}">
                                 <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition text-gray-400">
@@ -302,7 +296,7 @@
                                 </div>
                                 <div class="flex flex-col items-center h-full justify-between">
                                     <div class="flex-grow flex items-center justify-center w-full mb-4 pt-2">
-                                        <img src="${img}" alt="${title}" class="${finalImgClass} w-auto drop-shadow-sm filter contrast-110">
+                                        <img src="${img}" alt="${title}" class="${imgClass} w-auto drop-shadow-sm filter contrast-110">
                                     </div>
                                     <div class="text-center pb-2">
                                         <h3 class="font-bold text-ink text-sm leading-tight font-serif group-hover:text-brass transition-colors">${title}</h3>
@@ -320,9 +314,10 @@
                     renderCard('eame', 'images/eame.png', 'EAME Campaign', '1 Bronze Star', 'border-yellow-600');
                     renderCard('victory', 'images/victory.png', 'WWII Victory', '', 'border-red-600');
                     renderCard('occupation', 'images/occupation.png', 'Army of Occupation', 'Germany Clasp', 'border-black');
+                    // UPDATED: MUC Card with detailed citation
                     renderCard('muc', 'images/mua.jpeg', 'Meritorious Unit Plaque', '257th Engineers', 'border-red-600');
-                    renderCard('driver', 'images/driver.png', 'Driver & Mechanic', 'Driver-W Bar', 'border-gray-500');
-                    renderCard('marksman', 'images/marksman.png', 'Marksman Badge', '', 'border-gray-500');
+                    renderCard('driver', 'images/driver.png', 'Driver & Mechanic', 'Driver-W Bar', 'border-gray-500', 'max-h-20');
+                    renderCard('marksman', 'images/marksman.png', 'Marksman Badge', 'Rifle Bar', 'border-gray-500', 'max-h-20');
                 </script>
             </div>
         </div>
