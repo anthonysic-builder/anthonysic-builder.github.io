@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pvt. Paul F. Costa | WWII Service Record</title>
-    <meta name="description" content="Historical service record of Pvt. Paul F. Costa, U.S. Army 1943-1945.">
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     
@@ -110,7 +109,7 @@
                 Truck Driver, Heavy (MOS 931) • Combat Engineer • 8th Air Force & 7th Army
             </p>
 
-            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-16 mt-12">
                 <div class="group hidden md:block transition duration-500 hover:-translate-y-1">
                      <img src="images/8th-af.png" alt="8th Air Force Patch" class="h-40 w-auto drop-shadow-2xl filter brightness-90 hover:brightness-100 transition">
                      <p class="text-[10px] text-gray-400 mt-2 font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">8th Air Force</p>
@@ -131,8 +130,8 @@
                  <img src="images/7th-army.png" alt="7th Army Patch" class="h-24 w-auto object-contain">
             </div>
 
-            <div class="mt-16 w-fit mx-auto">
-                <div class="bg-paper text-ink px-10 py-3 shadow-xl border border-gray-400 rounded-sm">
+            <div class="mt-16 w-full flex justify-center">
+                <div class="bg-paper text-ink px-10 py-3 shadow-xl border border-gray-400 rounded-sm inline-block">
                     <p class="text-sm font-bold font-mono uppercase tracking-widest">Service Dates: 22 Mar 1943 – 16 Nov 1945</p>
                 </div>
             </div>
@@ -151,7 +150,7 @@
                     In October 1944, he deployed to <strong>France</strong> with the <strong>19th Mobile Repair & Reclamation Squadron</strong>, supporting forward airfields at Coulommiers and Valenciennes before returning to England.
                 </p>
                 <p>
-                    In early 1945, responding to critical manpower needs, he transferred to the Ground Forces. After infantry retraining, he joined the <strong>257th Engineer Combat Battalion <span class="font-bold text-ink">(7th Army)</span></strong> in Wassertrüdingen, Germany. He served through V-E Day and the subsequent occupation, utilizing his logistics skills to assist in the reconstruction of the American Occupation Zone.
+                    In early 1945, responding to critical manpower needs, he transferred to the Ground Forces. After infantry retraining, he joined the <strong>257th Engineer Combat Battalion (7th Army)</strong> in Wassertrüdingen, Germany. He served through V-E Day and the subsequent occupation, utilizing his logistics skills to assist in the reconstruction of the American Occupation Zone.
                 </p>
             </div>
         </div>
@@ -314,7 +313,8 @@
                     renderCard('eame', 'images/eame.png', 'EAME Campaign', '1 Bronze Star', 'border-yellow-600');
                     renderCard('victory', 'images/victory.png', 'WWII Victory', '', 'border-red-600');
                     renderCard('occupation', 'images/occupation.png', 'Army of Occupation', 'Germany Clasp', 'border-black');
-                    renderCard('muc', 'images/muc.png', 'Meritorious Unit', '257th Engineers', 'border-red-600');
+                    // UPDATED: MUC Card with new title and image
+                    renderCard('muc', 'images/mua.jpeg', 'Meritorious Unit Plaque', '257th Engineers', 'border-red-600');
                     renderCard('driver', 'images/driver.png', 'Driver & Mechanic', 'Driver-W Bar', 'border-gray-500', 'max-h-16');
                     renderCard('marksman', 'images/marksman.png', 'Marksman Badge', '', 'border-gray-500', 'max-h-16');
                 </script>
@@ -439,7 +439,7 @@
                 body: `<p><strong>Criteria:</strong> Awarded to soldiers who obtain a qualifying score in a prescribed weapon course.</p>${noteBox('Qualification Record:', 'Qualified with the Service Rifle (M1 Garand) at basic training.')}` 
             },
             'muc': { 
-                title: 'Meritorious Unit Commendation', 
+                title: 'Meritorious Unit Plaque', 
                 body: `<div class="italic text-gray-500 mb-2 font-serif text-sm">"For exceptionally meritorious conduct in the performance of outstanding services for at least six continuous months during the period of military operations against an armed enemy..."</div>${noteBox('Unit History:', 'The 257th Engineer Combat Battalion (H&S Company) distinguished itself during the Rhineland campaign, maintaining vital supply routes and bridges under combat conditions.')}` 
             }
         };
