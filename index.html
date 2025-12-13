@@ -174,13 +174,13 @@
             <h2 class="text-3xl font-bold text-ink mb-12 font-serif">Historical Overview</h2>
             <div class="prose prose-lg mx-auto text-gray-800 leading-relaxed text-left md:text-justify">
                 <p class="mb-6">
-                    The World War II service of <span class="font-bold text-od-green">Paul Costa</span> spans two distinct phases of the European conflict. Entering active service in March 1943, he first served as a heavy vehicle operator with the <strong>3rd Strategic Air Depot (8th Air Force)</strong>, based at Watton, England. For over a year, he drove supply convoys essential to the strategic bombing campaign.
+                    The World War II service of <span class="font-bold text-od-green">Paul Costa</span> spans two distinct phases of the European conflict. Entering active service in March 1943 at 19 years old, he first served as a heavy vehicle operator with the <strong>3rd Strategic Air Depot (8th Air Force)</strong>, based at Watton, England. For over a year, he drove supply convoys from England to Scottland, which were essential to the strategic bombing campaign.
                 </p>
                 <p class="mb-6">
                     In October 1944, he deployed to <strong>France</strong> with the <strong>19th Mobile Repair & Reclamation Squadron</strong>, supporting forward airfields at Coulommiers and Valenciennes before returning to England to continue logistical support duties during the Battle of the Bulge.
                 </p>
                 <p>
-                    In early 1945, responding to critical manpower needs, he transferred to the Ground Forces. After infantry retraining in Tidworth, UK, he joined the <strong>257th Engineer Combat Battalion <span class="font-black text-ink">(7th Army)</span></strong> in Wassertrüdingen, Germany. He served through V-E Day and the subsequent occupation, utilizing his logistics skills to assist in the reconstruction of the American Occupation Zone in Nördlingen and Sulzbach.
+                    In early 1945, responding to critical manpower needs, he transferred to the Ground Forces. After retraining as a combat engineer in Tidworth, England, he joined the <strong>257th Engineer Combat Battalion <span class="font-black text-ink">(7th Army)</span></strong> in Wassertrüdingen, Germany. He served through V-E Day and the subsequent occupation, utilizing his logistics skills to assist in the reconstruction of the American Occupation Zone in Nördlingen and Sulzbach.
                 </p>
             </div>
         </div>
@@ -344,7 +344,6 @@
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
                 <script>
-                    // UX IMPROVEMENT: Added Info Icon
                     const renderCard = (id, img, title, subtitle, borderHover, imgClass = 'max-h-56', imgContainerHeight = 'h-64', wrapperClass = '') => {
                         let subHtml = subtitle ? `<p class="text-[9px] uppercase tracking-wider text-gray-500 font-bold font-mono mt-3">${subtitle}</p>` : '';
                         document.write(`
@@ -369,17 +368,23 @@
                 </script>
 
                 <script>
-                    renderCard('goodconduct', 'images/gc_medal.png', 'Good Conduct', '', 'border-red-800');
-                    renderCard('americancampaign', 'images/ac_medal.png', 'American Campaign', '', 'border-blue-400');
-                    renderCard('eame', 'images/eame_medalv2.png', 'European–African–Middle Eastern Campaign', '2 Bronze Stars', 'border-yellow-600');
-                    renderCard('victory', 'images/wwii_medal.png', 'WWII Victory', '', 'border-red-600');
-                    renderCard('occupation', 'images/aoo.png', 'Army of Occupation', 'Germany Clasp', 'border-black');
+                    // UPDATED TITLES
+                    renderCard('goodconduct', 'images/gc_medal.png', 'Good Conduct Medal', '', 'border-red-800');
+                    renderCard('americancampaign', 'images/ac_medal.png', 'American Campaign Medal', '', 'border-blue-400');
+                    renderCard('eame', 'images/eame_medalv2.png', 'European–African–Middle Eastern Campaign Medal', '2 Bronze Stars', 'border-yellow-600');
+                    renderCard('victory', 'images/wwii_medal.png', 'WWII Victory Medal', '', 'border-red-600');
+                    renderCard('occupation', 'images/aoo.png', 'Army of Occupation Medal', 'Germany Clasp', 'border-black');
                     
                     renderCard('mua', 'images/mua.jpeg', 'Meritorious Service Unit Plaque', '257th Engineers', 'border-red-600', 'max-h-24', 'h-32');
-                    renderCard('driver', 'images/driver.png', 'Driver & Mechanic', 'Driver-W Bar', 'border-gray-500', 'max-h-24', 'h-32');
+                    
+                    // UPDATED TITLE: Added "Badge"
+                    renderCard('driver', 'images/driver.png', 'Driver & Mechanic Badge', 'Driver-W Bar', 'border-gray-500', 'max-h-24', 'h-32');
+                    
                     renderCard('marksman', 'images/marksman.png', 'Marksman Badge', 'Rifle Component', 'border-gray-500', 'max-h-24', 'h-32');
                     renderCard('rupturedduck', 'images/ruptured_duck.png', 'WWII Honorable Discharge', 'Ruptured Duck', 'border-brass', 'max-h-24', 'h-32');
-                    renderCard('overseasbars', 'images/overseas_bar.png', 'Overseas Service Bars', '3 Bars', 'border-od-green', 'max-h-12', 'h-32'); 
+                    
+                    // UPDATED SIZE: Increased to max-h-16
+                    renderCard('overseasbars', 'images/overseas_bar.png', 'Overseas Service Bars', '3 Bars', 'border-od-green', 'max-h-16', 'h-32'); 
                 </script>
             </div>
         </div>
@@ -442,7 +447,6 @@
             maxZoom: 19
         }).addTo(map);
 
-        // ADDED VALENCIENNES BACK to the array
         var locations = [
             { id: 1, name: "Camp Lee, VA", date: "Mar 22, 1943", unit: "QM School (Basic)", coords: [37.23, -77.33] },
             { id: 2, name: "Greenville AAB, SC", date: "Jul 31, 1943", unit: "52nd Station Comp Sq", coords: [34.75, -82.37] },
